@@ -1,93 +1,92 @@
-﻿.grid-container {
-	display: grid;
-	grid-template-areas:
-	'header header'
-	'main index'
-	'footer index';
-	grid-template-columns: 2fr 1fr;
+﻿body {
+	font-family:"Caslon Pro", serif;
+	font-size: 26.5px;
+	font-weight: 400;
+	line-height: 1.75em;
+	margin: 7% auto;
+	padding: 10px 20px 10px 20px;
+	max-width: 900px;
 }
 
-.header {
-	grid-area: header;
+header {
+	text-align: center;
 }
 
-.index {
-	grid-area: index;
-	font-family: "Graphik Medium", sans-serif;
-	margin: 10% auto;
-}
-
-.main {
-	grid-area: main;
-	margin: 1em auto;
-	max-width: 721.25px;
-}
-
-.footer {
-	grid-area: footer;
-	margin: 1em auto;
-	max-width: 721.25px;
-	margin-top: 2em;
-}
-
-body {
-	font-family: "Caslon Pro", serif;
-	line-height: 1.5em;
-	font-size: 21px;
-	margin: 7% 5% 10% 5%;
+footer {
+	margin-top: 4em;
 }
 
 h1 {
 	font-family: "Irvin Heading", serif;
-	line-height: 1em;
 	font-size: 43px;
 	font-weight: 400;
-	text-align: center;
+	line-height: 1em;
 	margin-top: 1em;
+	text-align: center;
 }
 
 h2 {
 	font-family: "Graphik Medium",sans-serif;
-	line-height: 1.5em;
-	font-size: 18px;
-	text-align: center;
-	margin-bottom: 2em;
+	font-size: 22px;
+	line-height:2em;
+
 }
 
-h3 {
+.author {
 	font-family: "Graphik Medium",sans-serif;
-	line-height:1.7em;
-	font-size: 17px;
-	margin-top: 1.2em;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.5em;
+	margin-bottom: 2em;
+	text-align: center;
 }
 
-h4 {
+.tableofContents {
 	font-family: "Irvin Heading";
-	line-height: 1.5em;
-	font-size: 15px;
-	font-weight: normal;
+	font-size: 18px;
+	line-height: 3em;
+	margin-top: 1.5em;
+	text-align: center;
 	color: rgba(219, 51, 52, 1);
+}
+
+ul {
+	font-family: "Graphik Medium", sans-serif;
+	font-size: 20px;
+	line-height: 1.75em;
+	list-style: none;
+	text-align: center;
+	margin-bottom: 1.5em;
 }
 
 img {
 	max-width: 100%;
+	margin-top: 1em;
 }
 
 hr {
 	border: 0;
-	background: rgba(229, 229, 229, 1);
 	height: 1px;
-	margin-top: 1em;
-}
-
-ul {
-	list-style: none;
-	line-height: 1.5em;
-	font-size: 17px;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	background: rgba(229, 229, 229, 1);
 }
 
 a {
 	color: black;
+}
+
+q, cite {
+	quotes: "“" "”" "‘" "’";
+	font-style: normal;
+}
+
+q::before, cite::before {
+	content: open-quote;
+}
+
+q::after, cite::after {
+	content: close-quote;
 }
 
 .word {
@@ -108,10 +107,9 @@ a {
 
 .has-dropcap::first-letter {
 	float: left;
-    font-size: 60px;
-    line-height: 1em;
+    font-size: 90px;
     margin-bottom: -0.2em;
-    padding: 0 0.05em 0 0;
+    padding:0.1em 0.06em 0 0;
 }
 
 .small-caps {
@@ -127,9 +125,9 @@ a {
 
 .caption {
 	font-family: "Graphik Medium", sans-serif;
-	font-size: 11.8px;
-	margin-top: -0.1em;
-	color: lightgray;
+	font-size: 16px;
+	margin-top: -0.3em;
+	color: gray;
 }
 
 .logo{

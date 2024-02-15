@@ -31,10 +31,10 @@ h3 {
 	font-family: "Titillium Web", sans-serif;
 	font-size: 24px;
 	font-weight: 700;
-	line-height: 0.5em;
+	line-height: 1em;
 }
 
-.subtitle {
+h1 + * {
 	font-family: Verdana, sans-serif;
 	font-size: 20px;
 	font-weight: 400;
@@ -50,7 +50,7 @@ h3 {
 	text-transform: uppercase;
 }
 
-.caption {
+img:not(.logo) + p {
 	font-family: "Titillium Web", sans-serif;
 	font-size: 18px;
 	font-weight: 700;

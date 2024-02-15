@@ -64,6 +64,13 @@ img {
 	margin-top: 1em;
 }
 
+
+.logo{
+	display: block;
+	margin: 0 auto;
+	scale: 130%;
+}
+
 hr {
 	border: 0;
 	height: 1px;
@@ -123,17 +130,11 @@ q::after, cite::after {
 	margin-left: 1em;
 }
 
-.caption {
+img:not(.logo) + p {
 	font-family: "Graphik Medium", sans-serif;
 	font-size: 16px;
 	margin-top: -0.3em;
 	color: gray;
-}
-
-.logo{
-	display: block;
-	margin: 0 auto;
-	scale: 130%;
 }
 
 @font-face {

@@ -24,7 +24,7 @@ h1 {
 	margin-top: 1em;
 }
 
-.subtitle {
+h1 + * {
 	font-family: "Caslon Pro", serif;
 	font-size: 26.5px;
 	font-weight: 400;
@@ -55,7 +55,7 @@ img {
 	max-width: 100%;
 }
 
-.logo{
+img[src*="logo"] {
 	display: block;
 	margin: 0 auto;
 	scale: 130%;
@@ -78,18 +78,18 @@ a {
 	color: black;
 }
 
-.word {
+a[href*=tionary] {
 	font-weight: 600;
 	text-decoration: none;
 	color: darkblue;
 }
 
-.person {
+a[href*=wikipedia] {
 	text-decoration: none;
 	color: rgba(219, 51, 52, 1);
 }
 
-.place {
+a[href*=booking] {
 	text-decoration: none;
 	color: green;
 }

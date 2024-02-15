@@ -9,29 +9,48 @@
 		<header>
 		</header>
 		<main>
-			<h1>Login</h1>
 			<form method="post" action="https://www.fabiovitali.it/TW/DHDK/doResponse.php">
-				<p>
-					<label>Name<span class="required">*</span>: <input type="text" name="name" placeholder="Merlin" size="15" required></label>
-					<label>Surname<span class="required">*</span>: <input type="text" name="surname" placeholder="The Magician" size="25" required></label>
-				</p>
-				<p>
+				<fieldset>
+					<legend><h1>Login</h1></legend>
+					<label><legend class="required">First Name</legend><input type="text" name="first-name" placeholder="Merlin" size="15" required /></label>
+					<label><legend class="required">Last Name</legend><input type="text" name="last-name" placeholder="The Magician" size="25" required /></label>
+					<p>
 					<input type="submit" name="submit">
-					<input type="reset" name="cancel">
+					<input type="reset" name="reset">
 				</p>
+				</fieldset>
 			</form>
 			<h1>Registration</h1>
 			<form method="post" action="https://www.fabiovitali.it/TW/DHDK/doResponse.php">
-				<p>
-					<label>Name<span class="required">*</span>: <input type="text" name="name" placeholder="Merlin" size="15" required></label>
-					<label>Middle Initial: <input type="text" name="name" placeholder="The" size="5"></label>
-					<label>Surname<span class="required">*</span>: <input type="text" name="surname" placeholder="Magician" size="25" required></label>
-				</p>
-				<p>
-
-					<label>Address<span class="required">*</span>: <input type="text" name="address" placeholder="Merlin Woods, Merlin Park, Galway, H91 HH76, Ireland" size="50" required></label>
-					<label>Phone<span class="required">*</span>: <input type="tel" name="phone" placeholder="Magician" pattern="[0-9]{3} [0-9]{3}-[0-9]{4}" required></label>
-				</p>
+				<fieldset>
+					<legend>Personal information</legend>
+					<label><legend class="required">First Name</legend><input type="text" name="first-name" placeholder="Merlin" size="15" required /></label>
+					<label><legend>Middle Name</legend><input type="text" name="middle-name" placeholder="The" size="5" /></label>
+					<label><legend class="required">Last Name</legend><input type="text" name="last-name" placeholder="Magician" size="25" required /></label>
+				</fieldset>
+				<fieldset>
+					<legend>Address</legend>
+					<label><legend class="required">Street</legend><input type="text" name="street" placeholder="Merlin Woods" size="30" required /></label>
+					<label><legend class="required">City</legend><input type="text" name="city" placeholder="Merlin Park" size="20" required /></label>
+					<label><legend class="required">State/Province</legend><input type="text" name="province" placeholder="Galway" size="20" required /></label>
+					<label><legend class="required">Postal Code</legend><input type="text" name="postal-code" placeholder="H91 HH76" size="20" required /></label>
+					<label><legend class="required">Country</legend><input type="text" name="country" placeholder="Ireland" size="20" required /></label>
+				</fieldset>
+				<fieldset>
+					<legend>Contact information</legend>
+					<label><legend class="required">Phone</legend><input type="tel" name="phone" placeholder="+39 3334445555" required /></label>
+					<label><legend class="required">E-mail</legend><input type="email" name="email" placeholder="archimedes.left@home.com" size="25" required /></label>
+				</fieldset>
+				<fieldset>
+					<legend class="required">Gender</legend>
+						<div class="reverse">
+							<label><input type="radio" name="gender" value="other" required /> None of the above. I identify as: <input type="text" name="gender" size="15" /></label>
+							<label><input type="radio" name="gender" value="not-declared" required /> Won't say</label>
+							<label><input type="radio" name="gender" value="non-binary" required /> Non-binary</label>
+							<label><input type="radio" name="gender" value="woman" required /> Woman</label>
+							<label><input type="radio" name="gender" value="man" required /> Man</label>
+						</div>
+				</fieldset>
 				<p>
 					<input type="submit" name="submit">
 					<input type="reset" name="cancel">

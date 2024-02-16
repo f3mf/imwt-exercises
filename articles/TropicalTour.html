@@ -6,58 +6,479 @@
 		<link href="TropicalTour.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		<header>
-		</header>
-		<main>
-			<form method="post" action="https://www.fabiovitali.it/TW/DHDK/doResponse.php">
-				<fieldset>
-					<legend><h1>Login</h1></legend>
-					<label><legend class="required">First Name</legend><input type="text" name="first-name" placeholder="Merlin" size="15" required /></label>
-					<label><legend class="required">Last Name</legend><input type="text" name="last-name" placeholder="The Magician" size="25" required /></label>
-					<p>
-					<input type="submit" name="submit">
-					<input type="reset" name="reset">
+		<form method="post" action="https://www.fabiovitali.it/TW/DHDK/doResponse.php">
+			<fieldset>
+				<legend><h1>Login</h1></legend>
+				<div class="required">
+					<label for="name">First Name</label>
+					<input id="name" type="text" name="name" placeholder="Merlin" size="15" required />
+				</div>
+				<div class="required">
+					<label for="surname">Last Name</label>
+					<input id="surname" type="text" name="surname" placeholder="TheMagician" size="25" required />
+				</div>
+				<p>
+					<input type="submit" name="submit" value="Submit">
+					<input type="reset" name="reset" value="Reset">
 				</p>
-				</fieldset>
-			</form>
-			<h1>Registration</h1>
-			<form method="post" action="https://www.fabiovitali.it/TW/DHDK/doResponse.php">
+			</fieldset>
+		</form>
+		<form method="post" action="https://www.fabiovitali.it/TW/DHDK/doResponse.php">
+			<fieldset>
+				<legend><h1>Registration</h1></legend>
 				<fieldset>
 					<legend>Personal information</legend>
-					<label><legend class="required">First Name</legend><input type="text" name="first-name" placeholder="Merlin" size="15" required /></label>
-					<label><legend>Middle Name</legend><input type="text" name="middle-name" placeholder="The" size="5" /></label>
-					<label><legend class="required">Last Name</legend><input type="text" name="last-name" placeholder="Magician" size="25" required /></label>
+					<div class="required">
+						<label for="name1">First Name</label>
+						<input id="name1" type="text" name="first-name" autocomplete="given-name" placeholder="Merlin" size="15" required />
+					</div>
+					<div>
+						<label for="name2">Middle Initial(s)</label>
+						<input id="name2" type="text" name="middle-name" autocomplete="additional-name" placeholder="T." size="5" />
+					</div>
+					<div class="required">
+						<label for="name3">Last Name</label>
+						<input id="name3" type="text" name="last-name" placeholder="Magician" autocomplete="family-name" size="25" required />
+					</div>
 				</fieldset>
 				<fieldset>
 					<legend>Address</legend>
-					<label><legend class="required">Street</legend><input type="text" name="street" placeholder="Merlin Woods" size="30" required /></label>
-					<label><legend class="required">City</legend><input type="text" name="city" placeholder="Merlin Park" size="20" required /></label>
-					<label><legend class="required">State/Province</legend><input type="text" name="province" placeholder="Galway" size="20" required /></label>
-					<label><legend class="required">Postal Code</legend><input type="text" name="postal-code" placeholder="H91 HH76" size="20" required /></label>
-					<label><legend class="required">Country</legend><input type="text" name="country" placeholder="Ireland" size="20" required /></label>
+					<div class="required">
+						<label for="address1">Street</label>
+						<input id="address1" type="text" name="street" placeholder="123 Merlin Woods" autocomplete="street-address" size="30" required />
+					</div>
+					<div class="required">
+						<label for="address2">City</label>
+						<input id="address2" type="text" name="city" placeholder="Camelot" autocomplete="address-level2" size="20" required />
+					</div>
+					<div class="required">
+						<label for="address3">State/Province</label>
+						<input id="address3" type="text" name="province" placeholder="Winchester" autocomplete="address-level1" size="20" required />
+					</div>
+					<div class="required">
+						<label for="address4">Postal Code</label>
+						<input id="address4" type="text" name="postal-code" placeholder="SO22 9PG" autocomplete="postal-code" size="10" required />
+					</div>
+					<div class="required">
+						<label for="address5">Country</label>
+						<input id="address5" type="text" name="country" placeholder="United Kingdom" autocomplete="country-name" size="20" required />
+					</div>
 				</fieldset>
 				<fieldset>
 					<legend>Contact information</legend>
-					<label><legend class="required">Phone</legend><input type="tel" name="phone" placeholder="+39 3334445555" required /></label>
-					<label><legend class="required">E-mail</legend><input type="email" name="email" placeholder="archimedes.left@home.com" size="25" required /></label>
+					<div class="required">
+						<label for="phone">Phone</label>
+						<input id="phone" type="tel" name="phone" autocomplete="tel" placeholder="+39 3334445555" required />
+					</div>
+					<div class="required">
+						<label for="email">E-mail</label>
+						<input id="email" type="email" name="email" autocomplete="email" placeholder="archimedes.left@home.com" size="25" required />
+					</div>
+				</fieldset>
+				<fieldset class="required">
+					<legend>Gender</legend>
+					<div>
+						<input id="gender1" type="radio" name="gender" value="man" required />
+						<label for="gender1">Man</label>
+					</div>
+					<div>
+						<input id="gender2" type="radio" name="gender" value="woman" required />
+						<label for="gender2">Woman</label>
+					</div>
+					<div>
+						<input id="gender3" type="radio" name="gender" value="non-binary" required />
+						<label for="gender3">Non-binary</label>
+					</div>
+					<div>
+						<input id="gender4" type="radio" name="gender" value="not-declared" required />
+						<label for="gender4">Won't say</label>
+					</div>
+					<div>
+						<input id="gender5" type="radio" name="gender" value="other" required />
+						<label for="gender5">None of the above. I identify as:</label>
+						<input id="gender6" type="text" name="gender" size="15" />
+					</div>
 				</fieldset>
 				<fieldset>
-					<legend class="required">Gender</legend>
-						<div class="reverse">
-							<label><input type="radio" name="gender" value="other" required /> None of the above. I identify as: <input type="text" name="gender" size="15" /></label>
-							<label><input type="radio" name="gender" value="not-declared" required /> Won't say</label>
-							<label><input type="radio" name="gender" value="non-binary" required /> Non-binary</label>
-							<label><input type="radio" name="gender" value="woman" required /> Woman</label>
-							<label><input type="radio" name="gender" value="man" required /> Man</label>
-						</div>
+					<legend>Cultural preferences</legend>
+					<div>
+						<input id="culture1" type="checkbox" name="cultural-preferences" value="art" />
+						<label for="culture1">Art</label>						
+					</div>
+					<div>
+						<input id="culture2" type="checkbox" name="cultural-preferences" value="cinema" />
+						<label for="culture2">Cinema</label>
+					</div>
+					<div>
+						<input id="culture3" type="checkbox" name="cultural-preferences" value="environment" />
+						<label for="culture3">Environment</label>
+					</div>
+					<div>
+						<input id="culture4" type="checkbox" name="cultural-preferences" value="food" />
+						<label for="culture4">Food</label>
+					</div>
+					<div>
+						<input id="culture5" type="checkbox" name="cultural-preferences" value="history" />
+						<label for="culture5">History</label>
+					</div>
+					<div>
+						<input id="culture6" type="checkbox" name="cultural-preferences" value="literature" />
+						<label for="culture6">Literature</label>
+					</div>
+					<div>
+						<input id="culture7" type="checkbox" name="cultural-preferences" value="music" />
+						<label for="culture7">Music</label>
+					</div>
+					<div>
+						<input id="culture8" type="checkbox" name="cultural-preferences" value="social" />
+						<label for="culture8">Social</label>
+					</div>
+					<div>
+						<input id="culture9" type="checkbox" name="cultural-preferences" value="spirituality" />
+						<label for="culture9">Spirituality</label>
+					</div>
+					<div>
+						<input id="culture10" type="checkbox" name="cultural-preferences" value="sports" />
+						<label for="culture10">Sports</label>
+					</div>
+					<div>
+						<input id="culture11" type="checkbox" name="cultural-preferences" value="other" />
+						<label for="culture11">Other:</label>
+						<input id="culture12" type="text" name="cultural-preferences" size="20" />
+					</div>
+				</fieldset>
+				<fieldset class="required">
+					<legend>Personal description</legend>
+					<label for="description"></label>
+						<textarea id="description" name="description" rows="5"minlength="20" placeholder="I'm Merlin, a wanderer enchanted by tropical allure. My heart beats to the rhythm of island vibes, the colorful tapestry of local traditions, and the soothing melody of ocean waves..." required></textarea>
 				</fieldset>
 				<p>
-					<input type="submit" name="submit">
-					<input type="reset" name="cancel">
+					<input type="submit" name="submit" value="Submit">
+					<input type="reset" name="reset" value="Reset">
 				</p>
-			</form>
-		</main>
-		<footer>
-		</footer>
+			</fieldset>
+		</form>
+		<form method="post" action="https://www.fabiovitali.it/TW/DHDK/doResponse.php">
+			<fieldset>
+				<legend><h1>Book a vacation</h1></legend>
+				<div class="required">
+					<label for="island">Choose Island</label>
+					<select id="island" name="island" required>
+						<option selected disabled>Choose...</option>
+						<hr />
+						<optgroup label="Beaches to relax in...">
+							<option value="Aitutaki">Aitutaki, Cook Islands</option>
+							<option value="Maldives">Maldives</option>
+							<option value="Saba">Saba</option>
+							<option value="KohRong">Koh Rong, Cambodia</option>
+							<option value="KohLipe">Koh Lipe, Thailand</option>
+						</optgroup>
+						<hr />
+						<optgroup label="Beaches off the beaten track...">
+							<option value="FernandodeNoronha">Fernando de Noronha, Brazil</option>
+							<option value="BoheyDulang">Bohey Dulang, Malaysia</option>
+							<option value="Moorea">Moorea, French Polynesia</option>
+							<option value="Havelock">Havelock Island, India</option>
+							<option value="Carriacou">Carriacou, Grenada</option>
+						</optgroup>
+					</select>
+				</div>
+				<div>
+					<div class="required">
+						<label for="dateFrom">Arriving</label>
+						<input type="date" class="form-control" id="dateFrom"  name="dateFrom" required />
+					</div>
+					<div class="required">
+						<label for="dateTo">Departing</label>
+						<input type="date" class="form-control" id="dateTo" name="dateTo" required />
+					</div>
+				</div>
+			  	<div>
+					<div class="required">
+						<label for="Name">Name</label>
+						<input id="Name" type="text" name="Name" placeholder="Merlin" />
+					</div>
+					<div class="required">
+						<label for="Surname">Surname</label>
+						<input id="Surname" type="text" name="Surname" placeholder="TheMagician" />
+					</div>
+				</div>
+				<div class="required">
+					<label for="Address">Address</label>
+					<input id="Address" type="text" name="Address" placeholder="123 Merlin Woods" required />
+		  		</div>
+				<div class="required">
+					<label for="City">City</label>
+					<input id="City" type="text" name="City" placeholder="Camelot">
+				</div>
+				<div class="required">
+					<label for="State">State/Province</label>
+					<select id="State" name="State" required>
+						<option selected disabled>Choose...</option>
+						<option value="AF">Afghanistan</option>
+						<option value="AX">Åland Islands</option>
+						<option value="AL">Albania</option>
+						<option value="DZ">Algeria</option>
+						<option value="AS">American Samoa</option>
+						<option value="AD">Andorra</option>
+						<option value="AO">Angola</option>
+						<option value="AI">Anguilla</option>
+						<option value="AQ">Antarctica</option>
+						<option value="AG">Antigua and Barbuda</option>
+						<option value="AR">Argentina</option>
+						<option value="AM">Armenia</option>
+						<option value="AW">Aruba</option>
+						<option value="AU">Australia</option>
+						<option value="AT">Austria</option>
+						<option value="AZ">Azerbaijan</option>
+						<option value="BS">Bahamas</option>
+						<option value="BH">Bahrain</option>
+						<option value="BD">Bangladesh</option>
+						<option value="BB">Barbados</option>
+						<option value="BY">Belarus</option>
+						<option value="BE">Belgium</option>
+						<option value="BZ">Belize</option>
+						<option value="BJ">Benin</option>
+						<option value="BM">Bermuda</option>
+						<option value="BT">Bhutan</option>
+						<option value="BO">Bolivia, Plurinational State of</option>
+						<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+						<option value="BA">Bosnia and Herzegovina</option>
+						<option value="BW">Botswana</option>
+						<option value="BV">Bouvet Island</option>
+						<option value="BR">Brazil</option>
+						<option value="IO">British Indian Ocean Territory</option>
+						<option value="BN">Brunei Darussalam</option>
+						<option value="BG">Bulgaria</option>
+						<option value="BF">Burkina Faso</option>
+						<option value="BI">Burundi</option>
+						<option value="KH">Cambodia</option>
+						<option value="CM">Cameroon</option>
+						<option value="CA">Canada</option>
+						<option value="CV">Cape Verde</option>
+						<option value="KY">Cayman Islands</option>
+						<option value="CF">Central African Republic</option>
+						<option value="TD">Chad</option>
+						<option value="CL">Chile</option>
+						<option value="CN">China</option>
+						<option value="CX">Christmas Island</option>
+						<option value="CC">Cocos (Keeling) Islands</option>
+						<option value="CO">Colombia</option>
+						<option value="KM">Comoros</option>
+						<option value="CG">Congo</option>
+						<option value="CD">Congo, the Democratic Republic of the</option>
+						<option value="CK">Cook Islands</option>
+						<option value="CR">Costa Rica</option>
+						<option value="CI">Côte d'Ivoire</option>
+						<option value="HR">Croatia</option>
+						<option value="CU">Cuba</option>
+						<option value="CW">Curaçao</option>
+						<option value="CY">Cyprus</option>
+						<option value="CZ">Czech Republic</option>
+						<option value="DK">Denmark</option>
+						<option value="DJ">Djibouti</option>
+						<option value="DM">Dominica</option>
+						<option value="DO">Dominican Republic</option>
+						<option value="EC">Ecuador</option>
+						<option value="EG">Egypt</option>
+						<option value="SV">El Salvador</option>
+						<option value="GQ">Equatorial Guinea</option>
+						<option value="ER">Eritrea</option>
+						<option value="EE">Estonia</option>
+						<option value="ET">Ethiopia</option>
+						<option value="FK">Falkland Islands (Malvinas)</option>
+						<option value="FO">Faroe Islands</option>
+						<option value="FJ">Fiji</option>
+						<option value="FI">Finland</option>
+						<option value="FR">France</option>
+						<option value="GF">French Guiana</option>
+						<option value="PF">French Polynesia</option>
+						<option value="TF">French Southern Territories</option>
+						<option value="GA">Gabon</option>
+						<option value="GM">Gambia</option>
+						<option value="GE">Georgia</option>
+						<option value="DE">Germany</option>
+						<option value="GH">Ghana</option>
+						<option value="GI">Gibraltar</option>
+						<option value="GR">Greece</option>
+						<option value="GL">Greenland</option>
+						<option value="GD">Grenada</option>
+						<option value="GP">Guadeloupe</option>
+						<option value="GU">Guam</option>
+						<option value="GT">Guatemala</option>
+						<option value="GG">Guernsey</option>
+						<option value="GN">Guinea</option>
+						<option value="GW">Guinea-Bissau</option>
+						<option value="GY">Guyana</option>
+						<option value="HT">Haiti</option>
+						<option value="HM">Heard Island and McDonald Islands</option>
+						<option value="VA">Holy See (Vatican City State)</option>
+						<option value="HN">Honduras</option>
+						<option value="HK">Hong Kong</option>
+						<option value="HU">Hungary</option>
+						<option value="IS">Iceland</option>
+						<option value="IN">India</option>
+						<option value="ID">Indonesia</option>
+						<option value="IR">Iran, Islamic Republic of</option>
+						<option value="IQ">Iraq</option>
+						<option value="IE">Ireland</option>
+						<option value="IM">Isle of Man</option>
+						<option value="IL">Israel</option>
+						<option value="IT">Italy</option>
+						<option value="JM">Jamaica</option>
+						<option value="JP">Japan</option>
+						<option value="JE">Jersey</option>
+						<option value="JO">Jordan</option>
+						<option value="KZ">Kazakhstan</option>
+						<option value="KE">Kenya</option>
+						<option value="KI">Kiribati</option>
+						<option value="KP">Korea, Democratic People's Republic of</option>
+						<option value="KR">Korea, Republic of</option>
+						<option value="KW">Kuwait</option>
+						<option value="KG">Kyrgyzstan</option>
+						<option value="LA">Lao People's Democratic Republic</option>
+						<option value="LV">Latvia</option>
+						<option value="LB">Lebanon</option>
+						<option value="LS">Lesotho</option>
+						<option value="LR">Liberia</option>
+						<option value="LY">Libya</option>
+						<option value="LI">Liechtenstein</option>
+						<option value="LT">Lithuania</option>
+						<option value="LU">Luxembourg</option>
+						<option value="MO">Macao</option>
+						<option value="MK">Macedonia, the former Yugoslav Republic of</option>
+						<option value="MG">Madagascar</option>
+						<option value="MW">Malawi</option>
+						<option value="MY">Malaysia</option>
+						<option value="MV">Maldives</option>
+						<option value="ML">Mali</option>
+						<option value="MT">Malta</option>
+						<option value="MH">Marshall Islands</option>
+						<option value="MQ">Martinique</option>
+						<option value="MR">Mauritania</option>
+						<option value="MU">Mauritius</option>
+						<option value="YT">Mayotte</option>
+						<option value="MX">Mexico</option>
+						<option value="FM">Micronesia, Federated States of</option>
+						<option value="MD">Moldova, Republic of</option>
+						<option value="MC">Monaco</option>
+						<option value="MN">Mongolia</option>
+						<option value="ME">Montenegro</option>
+						<option value="MS">Montserrat</option>
+						<option value="MA">Morocco</option>
+						<option value="MZ">Mozambique</option>
+						<option value="MM">Myanmar</option>
+						<option value="NA">Namibia</option>
+						<option value="NR">Nauru</option>
+						<option value="NP">Nepal</option>
+						<option value="NL">Netherlands</option>
+						<option value="NC">New Caledonia</option>
+						<option value="NZ">New Zealand</option>
+						<option value="NI">Nicaragua</option>
+						<option value="NE">Niger</option>
+						<option value="NG">Nigeria</option>
+						<option value="NU">Niue</option>
+						<option value="NF">Norfolk Island</option>
+						<option value="MP">Northern Mariana Islands</option>
+						<option value="NO">Norway</option>
+						<option value="OM">Oman</option>
+						<option value="PK">Pakistan</option>
+						<option value="PW">Palau</option>
+						<option value="PS">Palestinian Territory, Occupied</option>
+						<option value="PA">Panama</option>
+						<option value="PG">Papua New Guinea</option>
+						<option value="PY">Paraguay</option>
+						<option value="PE">Peru</option>
+						<option value="PH">Philippines</option>
+						<option value="PN">Pitcairn</option>
+						<option value="PL">Poland</option>
+						<option value="PT">Portugal</option>
+						<option value="PR">Puerto Rico</option>
+						<option value="QA">Qatar</option>
+						<option value="RE">Réunion</option>
+						<option value="RO">Romania</option>
+						<option value="RU">Russian Federation</option>
+						<option value="RW">Rwanda</option>
+						<option value="BL">Saint Barthélemy</option>
+						<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+						<option value="KN">Saint Kitts and Nevis</option>
+						<option value="LC">Saint Lucia</option>
+						<option value="MF">Saint Martin (French part)</option>
+						<option value="PM">Saint Pierre and Miquelon</option>
+						<option value="VC">Saint Vincent and the Grenadines</option>
+						<option value="WS">Samoa</option>
+						<option value="SM">San Marino</option>
+						<option value="ST">Sao Tome and Principe</option>
+						<option value="SA">Saudi Arabia</option>
+						<option value="SN">Senegal</option>
+						<option value="RS">Serbia</option>
+						<option value="SC">Seychelles</option>
+						<option value="SL">Sierra Leone</option>
+						<option value="SG">Singapore</option>
+						<option value="SX">Sint Maarten (Dutch part)</option>
+						<option value="SK">Slovakia</option>
+						<option value="SI">Slovenia</option>
+						<option value="SB">Solomon Islands</option>
+						<option value="SO">Somalia</option>
+						<option value="ZA">South Africa</option>
+						<option value="GS">South Georgia and the South Sandwich Islands</option>
+						<option value="SS">South Sudan</option>
+						<option value="ES">Spain</option>
+						<option value="LK">Sri Lanka</option>
+						<option value="SD">Sudan</option>
+						<option value="SR">Suriname</option>
+						<option value="SJ">Svalbard and Jan Mayen</option>
+						<option value="SZ">Swaziland</option>
+						<option value="SE">Sweden</option>
+						<option value="CH">Switzerland</option>
+						<option value="SY">Syrian Arab Republic</option>
+						<option value="TW">Taiwan, Province of China</option>
+						<option value="TJ">Tajikistan</option>
+						<option value="TZ">Tanzania, United Republic of</option>
+						<option value="TH">Thailand</option>
+						<option value="TL">Timor-Leste</option>
+						<option value="TG">Togo</option>
+						<option value="TK">Tokelau</option>
+						<option value="TO">Tonga</option>
+						<option value="TT">Trinidad and Tobago</option>
+						<option value="TN">Tunisia</option>
+						<option value="TR">Turkey</option>
+						<option value="TM">Turkmenistan</option>
+						<option value="TC">Turks and Caicos Islands</option>
+						<option value="TV">Tuvalu</option>
+						<option value="UG">Uganda</option>
+						<option value="UA">Ukraine</option>
+						<option value="AE">United Arab Emirates</option>
+						<option value="GB">United Kingdom</option>
+						<option value="US">United States</option>
+						<option value="UM">United States Minor Outlying Islands</option>
+						<option value="UY">Uruguay</option>
+						<option value="UZ">Uzbekistan</option>
+						<option value="VU">Vanuatu</option>
+						<option value="VE">Venezuela, Bolivarian Republic of</option>
+						<option value="VN">Viet Nam</option>
+						<option value="VG">Virgin Islands, British</option>
+						<option value="VI">Virgin Islands, U.S.</option>
+						<option value="WF">Wallis and Futuna</option>
+						<option value="EH">Western Sahara</option>
+						<option value="YE">Yemen</option>
+						<option value="ZM">Zambia</option>
+						<option value="ZW">Zimbabwe</option>
+					</select>
+				</div>
+				<div class="required">
+					<label for="Zip">Zip</label>
+					<input id="Zip" type="text" name="Zip" placeholder="SO22 9PG" />
+				</div>
+				<div>
+					<input id="rememberMe" type="checkbox" name="rememberMe" />
+					<label for="gridCheck">Remember me</label>
+				</div>
+	      		<p>
+					<input type="submit" name="submit" value="Book your vacation">
+					<input type="reset" name="reset" value="Reset">
+				</p>
+			</fieldset>
+		</form>
 	</body>
 </html>

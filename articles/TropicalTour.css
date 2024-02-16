@@ -1,92 +1,114 @@
 ﻿body {
-	font-family: "Chronicle Display", serif;
+	font-family: "Poliphili", serif;
 	line-height: 1.5em;
 	font-size: 22px;
-	margin: 0 auto;
+	margin: 2% auto;
 	padding: 10px 20px 10px 20px;
-	max-width: 900px;
-}
-
-.required::after {
-    content: " *";
-	color: red;
+	max-width: 750px;
 }
 
 h1 {
-	font-family: "Chronicle Display", serif;
+	font-family: "Poliphili Display", serif;
 	font-size: 47px;
+    font-style: normal;
 	line-height: 1em;
-	font-weight: 600;
+	font-weight: 400;
 }
 
-label {
+.required > :first-child::after {
+    content: " *";
+    position: relative;
+    top: -0.8em;
+    font-size: 50%;
+    color: red;
+}
+
+form {
+    margin-bottom: 2em;
+}
+
+fieldset {
+    margin-bottom: 1em;
+}
+
+legend {
+    font-style: italic;
+}
+
+div {
     display: inline-flex;
 }
 
-.reverse {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-input {
+input, select {
     margin: 5px 10px;
 }
 
-input[value="other"]:not(:checked) + input {
-    display: none;
+input[value="other"]:not(:checked) ~ input {
+    visibility:hidden;
 }
 
-input[value="other"]:checked + input {
+input[value="other"]:checked ~ input {
     display: inline-flex;
 }
 
-@font-face {
-    font-family: "Titillium Web";
-    font-weight: 700;
-    src: url("fonts/TitilliumWeb-Bold.ttf");
+label[for="description"] {
+    display: block;
+}
+
+textarea {
+  resize: none;
+  border: none;
+  width: 100%;
 }
 
 @font-face {
-    font-family: "Chronicle Display";
-    font-weight: 400;
-    src: url("fonts/ChronicleDisp-Roman.otf") format("opentype");
+font-family: "Poliphili Display";
+font-weight: 400;
+src: url("fonts/PoliphiliDisplay.otf") format("opentype");
 }
 
 @font-face {
-    font-family: "Chronicle Display";
-    font-weight: 400;
-    font-style: italic;
-    src: url("fonts/ChronicleDisp-Italic.otf") format("opentype");
+font-family: "Poliphili Display";
+font-weight: 700;
+src: url("fonts/PoliphiliDisplay-Bold.otf") format("opentype");
 }
 
 @font-face {
-    font-family: "Chronicle Display";
-    font-weight: 600;
-    src: url("fonts/ChronicleDisp-Semibold.otf") format("opentype");
+font-family: "Poliphili Display";
+font-weight: 400;
+font-style: italic;
+src: url("fonts/PoliphiliDisplay-Italic.otf") format("opentype");
 }
 
 @font-face {
-    font-family: "Chronicle Display";
-    font-weight: 600;
-    font-style: italic;
-    src: url("fonts/ChronicleDisp-SemiboldItal.otf") format("opentype");
+font-family: "Poliphili Display";
+font-weight: 700;
+font-style: italic;
+src: url("fonts/PoliphiliDisplay-BoldItalic.otf") format("opentype");
 }
 
 @font-face {
-    font-family: "Chronicle Display";
-    font-weight: 700;
-    src: url("fonts/ChronicleDisp-Bold.otf") format("opentype");
+font-family: "Poliphili";
+font-weight: 400;
+src: url("fonts/Poliphili.otf") format("opentype");
 }
 
 @font-face {
-    font-family: "Chronicle Display";
-    font-weight: 700;
-    font-style: italic;
-    src: url("fonts/ChronicleDisp-BoldItal.otf") format("opentype");
+font-family: "Poliphili";
+font-weight: 700;
+src: url("fonts/Poliphili-Bold.otf") format("opentype");
 }
 
 @font-face {
-    font-family: "Chronicle Display Condensed";
-    font-weight: 400;
-    src: url("fonts/ChronicleDispCond-Roman.otf") format("opentype");
+font-family: "Poliphili";
+font-weight: 400;
+font-style: italic;
+src: url("fonts/Poliphili-Italic.otf") format("opentype");
+}
+
+@font-face {
+font-family: "Poliphili";
+font-weight: 700;
+font-style: italic;
+src: url("fonts/Poliphili-BoldItalic.otf") format("opentype");
 }

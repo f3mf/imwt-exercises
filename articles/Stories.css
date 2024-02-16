@@ -83,6 +83,22 @@ a {
 	color: black;
 }
 
+a[href*=tionary] {
+	font-weight: 600;
+	text-decoration: none;
+	color: darkblue;
+}
+
+a[href*=wikipedia] {
+	text-decoration: none;
+	color: rgba(219, 51, 52, 1);
+}
+
+a[href*=booking] {
+	text-decoration: none;
+	color: green;
+}
+
 q, cite {
 	quotes: "“" "”" "‘" "’";
 	font-style: normal;
@@ -94,22 +110,6 @@ q::before, cite::before {
 
 q::after, cite::after {
 	content: close-quote;
-}
-
-.word {
-	font-weight: 600;
-	text-decoration: none;
-	color: darkblue;
-}
-
-.person {
-	text-decoration: none;
-	color: rgba(219, 51, 52, 1);
-}
-
-.place {
-	text-decoration: none;
-	color: green;
 }
 
 .has-dropcap::first-letter {

@@ -1,0 +1,89 @@
+body {
+	text-align: center;
+	font-family: "Poliphili Display";
+	font-size: 60px;
+	line-height: 1.25;
+	display: flex;
+	width: 100vw;
+  height: 100vh;
+}
+
+.main {
+	width: 650px;
+	height: 810px;
+	margin: auto auto;
+}
+
+.left {
+	shape-outside: polygon(0% 0%, 70% 100%, 0% 100%);
+	clip-path: polygon(0% 00%, 70% 100%, 0% 100%);
+	height: 100%;
+	width: 50%;
+	float: left;
+}
+
+.right {
+	shape-outside: polygon(100% 0%, 30% 100%, 100% 100%);
+	clip-path: polygon(100% 00%, 30% 100%, 100% 100%);
+	height: 100%;
+	width: 50%;
+	float: right;
+}
+
+.text {
+	margin-bottom: 0.5em;
+}
+
+.serifs {
+	margin-bottom: -0.5ex;
+}
+
+a {
+	text-decoration: none;
+}
+
+a.red:link {
+  color: red;
+}
+
+a.red:visited {
+  color: darkred;
+}
+
+a.red:hover {
+  color: indianred;
+}
+
+a.green:link {
+  color: seagreen;
+}
+
+a.green:visited {
+  color: darkolivegreen;
+}
+
+a.green:hover {
+  color: darkseagreen;
+}
+
+a.gold:link {
+  color: goldenrod;
+}
+
+a.gold:visited {
+  color: darkgoldenrod;
+}
+
+a.gold:hover {
+  color: tan;
+}
+
+a:active {
+  color: black;
+}
+
+@font-face {
+	font-family: "Poliphili Display";
+	font-weight: 400;
+	src: url("articles/fonts/PoliphiliDisplay.otf") format("opentype");
+}

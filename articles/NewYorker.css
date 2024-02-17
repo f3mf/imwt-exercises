@@ -1,0 +1,116 @@
+﻿body {
+	font-family:"Caslon Pro", serif;
+	line-height: 1.5em;
+	font-size: 26.5px;
+	font-weight: 400;
+	margin: 7% auto;
+	padding: 10px 20px 10px 20px;
+	max-width: 900px;
+}
+
+header {
+	text-align: center;
+}
+
+footer {
+	margin-top: 4em;
+}
+
+h1 {
+	font-family: "Irvin Heading", serif;
+	line-height: 1em;
+	font-size: 43px;
+	font-weight: 400;
+	margin-top: 1em;
+}
+
+h2 {
+	font-family: "Caslon Pro", serif;
+	font-size: 26.5px;
+	font-weight: 400;
+	font-style: italic;
+}
+
+h3 {
+	font-family: "Graphik Medium",sans-serif;
+	line-height: 2em;
+	font-size: 18.5px;
+	margin-bottom: 2em;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	color: black;
+}
+
+.word {
+	font-weight: 600;
+	text-decoration: none;
+	color: darkblue;
+}
+
+.person {
+	text-decoration: none;
+	color: rgba(219, 51, 52, 1);
+}
+
+.place {
+	text-decoration: none;
+	color: green;
+}
+
+.has-dropcap::first-letter {
+	float: left;
+    font-size: 73px;
+    margin-bottom: -0.2em;
+    padding:0.1em 0.06em 0 0;
+}
+
+.small-caps {
+	font-variant: small-caps;
+}
+
+.caption {
+	font-size: 22.7px;
+	margin-top: -0.25em;
+}
+
+.sub {
+	font-family: "Graphik Medium",sans-serif;
+	font-size: 15px;
+	color: lightgray;
+}
+
+.logo{
+	display: block;
+	margin: 0 auto;
+	scale: 130%;
+}
+
+@font-face {
+    font-family: "Irvin Heading";
+    font-weight: 400;
+    src: url("fonts/Irvin-Heading.woff2") format("woff2");
+    }
+
+@font-face {
+    font-family: "Caslon Pro";
+    font-weight: 400;
+    src: url("fonts/Caslon-Pro-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Caslon Pro";
+    font-weight: 400;
+    font-style: italic;
+    src: url("fonts/Caslon-Pro-Italic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Graphik Medium";
+    font-weight: 500;
+    src: url("fonts/Graphik-Medium.woff2") format("woff2");
+}

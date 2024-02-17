@@ -7,35 +7,37 @@
 	max-width: 900px;
 }
 
-.required {
+.required::after {
+    content: " *";
 	color: red;
 }
 
 h1 {
 	font-family: "Chronicle Display", serif;
 	font-size: 47px;
-	line-height: 1.25em;
+	line-height: 1em;
 	font-weight: 600;
 }
 
-a {
-	color: black;
-	text-decoration-thickness: 2px;
+label {
+    display: inline-flex;
 }
 
-.word {
-	text-decoration: none;
-	font-weight: 600;
-	color: darkblue;
+.reverse {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
-.person {
-	color: rgba(219, 51, 52, 1);
+input {
+    margin: 5px 10px;
 }
 
-.place {
-	text-decoration: none;
-	color: green;
+input[value="other"]:not(:checked) + input {
+    display: none;
+}
+
+input[value="other"]:checked + input {
+    display: inline-flex;
 }
 
 @font-face {

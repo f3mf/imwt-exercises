@@ -1,15 +1,16 @@
 body {
-	text-align: center;
-	font-family: "Poliphili Display";
-	font-size: 60px;
-	line-height: 1.25;
 	display: flex;
 	width: 100vw;
-  height: 100vh;
+	height: 100vh;
+	text-align: center;
+	font-family: "Poliphili Display";
+	font-size: 50px;
+	line-height: 1.25;
+	hyphens: auto;
 }
 
 .main {
-	width: 650px;
+	width: 700px;
 	height: 810px;
 	margin: auto auto;
 }
@@ -30,12 +31,13 @@ body {
 	float: right;
 }
 
-.text {
+p {
+	margin-top: 0em;
 	margin-bottom: 0.5em;
 }
 
-.serifs {
-	margin-bottom: -0.5ex;
+.deco {
+	margin-bottom: -0.25em;
 }
 
 a {
@@ -43,47 +45,59 @@ a {
 }
 
 a.red:link {
-  color: red;
+	color: red;
 }
 
 a.red:visited {
-  color: darkred;
+	color: darkred;
 }
 
 a.red:hover {
-  color: indianred;
+	color: indianred;
 }
 
 a.green:link {
-  color: seagreen;
+	color: seagreen;
 }
 
 a.green:visited {
-  color: darkolivegreen;
+	color: darkolivegreen;
 }
 
 a.green:hover {
-  color: darkseagreen;
+	color: darkseagreen;
 }
 
 a.gold:link {
-  color: goldenrod;
+	color: goldenrod;
 }
 
 a.gold:visited {
-  color: darkgoldenrod;
+	color: darkgoldenrod;
 }
 
 a.gold:hover {
-  color: tan;
+	color: tan;
+}
+
+a.turquoise:link {
+	color: turquoise;
+}
+
+a.turquoise:visited {
+	color: mediumturquoise;
+}
+
+a.turquoise:hover {
+	color: paleturquoise;
 }
 
 a:active {
-  color: black;
+	color: black;
 }
 
 @font-face {
-	font-family: "Poliphili Display";
-	font-weight: 400;
-	src: url("articles/fonts/PoliphiliDisplay.otf") format("opentype");
+font-family: "Poliphili Display";
+font-weight: 400;
+src: url("articles/fonts/PoliphiliDisplay.otf") format("opentype");
 }

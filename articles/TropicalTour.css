@@ -54,6 +54,10 @@ label[for="description"] {
     display: block;
 }
 
+select#countryCode {
+    width: 100px;
+}
+
 textarea {
   resize: none;
   border: none;

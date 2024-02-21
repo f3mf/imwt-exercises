@@ -1,6 +1,6 @@
 ﻿body {
 	font-family:"Caslon Pro", serif;
-	font-size: 1.65em;
+	font-size: 1.65em; /* font-size specified in relative form as per W3C recommendations: https://www.w3.org/Style/Examples/007/units.en.html */
 	font-weight: 400;
 	line-height: 1.75em;
 	margin: 7% auto;
@@ -24,7 +24,7 @@ h1 {
 	margin-top: 1em;
 }
 
-h1 + * {
+.newyorker h1 + * {
 	font-family: "Caslon Pro", serif;
 	font-size: 1em;
 	font-weight: 400;
@@ -32,19 +32,44 @@ h1 + * {
 	font-style: italic;
 }
 
+h2 {
+	font-family: "Graphik Medium",sans-serif;
+	font-size: 0.8em;
+	line-height:2em;
+
+}
+
 .author {
 	font-family: "Graphik Medium",sans-serif;
 	font-size: 0.7em;
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 1.5em;
 	margin-bottom: 2.2em;
 }
 
+.tableofContents {
+	font-family: "Irvin Heading";
+	font-size: 0.9em;
+	line-height: 3em;
+	margin-top: 1.5em;
+	text-align: center;
+	color: rgb(204, 51, 0);
+}
+
+ul {
+	font-family: "Graphik Medium", sans-serif;
+	font-size: 0.75em;
+	line-height: 1.75em;
+	list-style: none;
+	text-align: center;
+	margin-bottom: 1.5em;
+}
+
 .has-dropcap::first-letter {
 	float: left;
-    font-size: 3.4em;
+    font-size: 3.1em;
     margin-bottom: -0.2em;
-    padding:0.35em 0.06em 0 0;
+    padding:0.45em 0.06em 0 0;
 }
 
 .small-caps {
@@ -53,6 +78,10 @@ h1 + * {
 
 img {
 	max-width: 100%;
+}
+
+.stories img {
+	margin-top: 1em;
 }
 
 img[src*="logo"] {
@@ -71,7 +100,21 @@ img[src*="logo"] {
 	font-family: "Graphik Medium",sans-serif;
 	font-size: 0.65em;
 	font-style: normal;
-	color: lightgray;
+	color: rgb(204, 204, 204);
+}
+
+.date {
+	font-family: "Graphik Medium", sans-serif;
+	font-size: 80%;
+	font-weight: 400;
+	margin-left: 1em;
+}
+
+.stories img:not(.logo) + p {
+	font-family: "Graphik Medium", sans-serif;
+	font-size: 0.6em;
+	margin-top: -0.3em;
+	color: rgb(204, 204, 204);
 }
 
 a {
@@ -81,17 +124,17 @@ a {
 a[href*=tionary] {
 	font-weight: 600;
 	text-decoration: none;
-	color: darkblue;
+	color: rgb(51, 51, 153);
 }
 
 a[href*=wikipedia] {
 	text-decoration: none;
-	color: rgba(219, 51, 52, 1);
+	color: rgb(204, 51, 0);
 }
 
 a[href*=booking] {
 	text-decoration: none;
-	color: green;
+	color: rgb(0, 153, 51);
 }
 
 q, cite {
@@ -105,6 +148,14 @@ q::before, cite::before {
 
 q::after, cite::after {
 	content: close-quote;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	background: rgb(204, 204, 204);
 }
 
 @font-face {

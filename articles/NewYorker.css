@@ -1,6 +1,6 @@
 ﻿body {
 	font-family:"Caslon Pro", serif;
-	font-size: 26.5px;
+	font-size: 1.65em;
 	font-weight: 400;
 	line-height: 1.75em;
 	margin: 7% auto;
@@ -18,7 +18,7 @@ footer {
 
 h1 {
 	font-family: "Irvin Heading", serif;
-	font-size: 43px;
+	font-size: 1.6em;
 	font-weight: 400;
 	line-height: 1em;
 	margin-top: 1em;
@@ -26,7 +26,7 @@ h1 {
 
 h1 + * {
 	font-family: "Caslon Pro", serif;
-	font-size: 26.5px;
+	font-size: 1em;
 	font-weight: 400;
 	line-height: 1.5em;
 	font-style: italic;
@@ -34,17 +34,17 @@ h1 + * {
 
 .author {
 	font-family: "Graphik Medium",sans-serif;
-	font-size: 18.5px;
-	font-weight: 600;
+	font-size: 0.7em;
+	font-weight: 500;
 	line-height: 1.5em;
 	margin-bottom: 2.2em;
 }
 
 .has-dropcap::first-letter {
 	float: left;
-    font-size: 90px;
+    font-size: 3.4em;
     margin-bottom: -0.2em;
-    padding:0.1em 0.06em 0 0;
+    padding:0.35em 0.06em 0 0;
 }
 
 .small-caps {
@@ -62,14 +62,14 @@ img[src*="logo"] {
 }
 
 .caption {
-	font-size: 22.7px;
+	font-size: 0.86em;
 	margin-top: -0.25em;
 	font-style: italic;
 }
 
 .attribution {
 	font-family: "Graphik Medium",sans-serif;
-	font-size: 15px;
+	font-size: 0.65em;
 	font-style: normal;
 	color: lightgray;
 }

@@ -1,43 +1,53 @@
 body {
 	display: flex;
+	overflow: hidden;
 	width: 100vw;
 	height: 100vh;
-	text-align: center;
 	font-family: "Poliphili Display";
-	font-size: 50px;
+	font-size: 3.15em;
 	line-height: 1.25;
 	hyphens: auto;
+	text-align: center;
 }
 
-.main {
+#wrap {
 	width: 700px;
-	height: 810px;
+	min-width: 533px;
+	height: 850px;
 	margin: auto auto;
 }
 
-.left {
-	shape-outside: polygon(0% 0%, 70% 100%, 0% 100%);
-	clip-path: polygon(0% 00%, 70% 100%, 0% 100%);
-	height: 100%;
+span::before, span::after {
+	content: "";
 	width: 50%;
+	height: 100%;
+}
+
+span::before {
+	shape-outside: polygon(0% 0%, 70% 100%, 0% 100%);
+	clip-path: polygon(0% 0%, 70% 100%, 0% 100%);
 	float: left;
 }
 
-.right {
+span::after {
 	shape-outside: polygon(100% 0%, 30% 100%, 100% 100%);
-	clip-path: polygon(100% 00%, 30% 100%, 100% 100%);
-	height: 100%;
-	width: 50%;
+	clip-path: polygon(100% 0%, 30% 100%, 100% 100%);
 	float: right;
 }
 
-p {
+#text {
+	height: fit-content;
+	margin-top: 5%;
+}
+
+#text > div {
 	margin-top: 0em;
 	margin-bottom: 0.5em;
 }
 
-.deco {
+#deco {
 	margin-bottom: -0.25em;
+	line-height: 1em;
 }
 
 a {
@@ -69,7 +79,7 @@ a:active {
 }
 
 .green:hover {
-	color: rgb(102, 153, 102);;
+	color: rgb(102, 153, 102);
 }
 
 .gold:link {

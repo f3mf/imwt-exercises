@@ -4,17 +4,17 @@ body {
 	width: 100vw;
 	height: 100vh;
 	font-family: "Poliphili Display";
-	font-size: 3.15em;
+	font-size: 3.5em;
 	line-height: 1.25;
 	hyphens: auto;
 	text-align: center;
 }
 
 #wrap {
-	width: 75vmin;
-	min-width: 650px;
+	width: 80vmin;
+	min-width: 715px;
 	height: 95vmin;
-	min-height: 800px;
+	min-height: 900px;
 	margin: auto auto;
 	overflow: hidden;
 }
@@ -23,7 +23,6 @@ span::before, span::after {
 	content: "";
 	width: 50%;
 	height: 100%;
-	background: peachpuff;
 }
 
 span::before {

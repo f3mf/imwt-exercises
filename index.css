@@ -11,16 +11,19 @@ body {
 }
 
 #wrap {
-	width: 700px;
-	min-width: 533px;
-	height: 850px;
+	width: 75vmin;
+	min-width: 650px;
+	height: 95vmin;
+	min-height: 800px;
 	margin: auto auto;
+	overflow: hidden;
 }
 
 span::before, span::after {
 	content: "";
 	width: 50%;
 	height: 100%;
+	background: peachpuff;
 }
 
 span::before {

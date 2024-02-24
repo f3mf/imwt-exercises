@@ -190,7 +190,7 @@ hr {
 	background: rgb(204, 204, 204);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (orientation: landscape) {
 
 	body {
 		font-size: 1.65em;

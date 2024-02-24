@@ -127,7 +127,7 @@ table {
 
 th, td {
 	padding: 1.4em 0 1.4em 0;
-	border-bottom: 1.5px solid rgba(229,229,229,1);
+	border-bottom: 1px solid rgba(229,229,229,1);
 }
 
 th {
@@ -137,7 +137,7 @@ th {
 hr {
 	border: 0;
 	background:rgba(229,229,229,1);
-	height: 1.5px;
+	height: 1px;
 }
 
 footer hr:nth-child(4n+3) {

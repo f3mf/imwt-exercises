@@ -1,6 +1,6 @@
 ﻿body {
 	font-family:"Caslon Pro", serif;
-	font-size: 2em; /* font-size specified in relative form as per W3C recommendations: https://www.w3.org/Style/Examples/007/units.en.html */
+	font-size: 3em; /* font-size specified in relative form as per W3C recommendations: https://www.w3.org/Style/Examples/007/units.en.html */
 	font-weight: 400;
 	line-height: 2em;
 	margin: 7% auto;

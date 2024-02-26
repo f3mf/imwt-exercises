@@ -2,6 +2,9 @@
 	--grid-gap: 1rem;
 	--grid-margin: 1.5rem;
 	--row-gap: 0px;
+	--blue: 51, 51, 153;
+	--green: 0, 153, 51;
+	--red: 204, 51, 0;
 	box-sizing: border-box;
 }
 
@@ -14,7 +17,7 @@ body {
 	text-size-adjust: 100%;
 	line-break: auto;
 	padding-top: 3.5rem;
-	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
 }
 
 /* Navigation bar */
@@ -35,7 +38,8 @@ body {
 	column-gap: var(--grid-gap);
     row-gap: var(--row-gap);
     background: rgb(255, 255, 255);
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+	box-shadow: rgb(0, 0, 0, 0.1) 0px 2px 4px;
+	z-index: 900;
 }
 
 /* Top navigation bar */
@@ -56,6 +60,14 @@ img[src*="logo"] {
 	height: auto;
 	vertical-align: middle;
 	width: 87%;
+}
+
+.navbar a, .tocHeader {
+	transition: opacity ease-out 0.2s;
+}
+
+.navbar a:hover, .tocHeader:hover {
+	opacity: 0.5;
 }
 
 /* Drop-down navigation bar */
@@ -97,7 +109,7 @@ img[src*="logo"] {
 	padding-top: 5rem;
 	padding-right: var(--grid-margin);
 	padding-left: var(--grid-margin);
-	background-image: linear-gradient(to left, rgba(255,255,255,0.5), 10%, rgba(255,255,255,0.99) 80% 100%);
+	background-image: linear-gradient(to left, rgb(255,255,255,0.5), 10%, rgb(255,255,255,0.99) 80% 100%);
 	width: 100vw;
 	height: 100vh;
 	overflow-y: scroll;
@@ -109,12 +121,12 @@ img[src*="logo"] {
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .toc ul {
@@ -149,6 +161,7 @@ article {
 	overflow-x: hidden;
 	width: 100%;
 }
+
 article header, article main, article footer {
 	grid-column: 2;
 }
@@ -199,10 +212,12 @@ h1 {
 
 .author a {
 	text-decoration: none;
+	transition: none;
 }
 
 .author a:hover {
 	text-decoration: underline;
+	opacity: 1;
 }
 
 time {
@@ -296,20 +311,38 @@ a {
 	color: rgb(0, 0, 0);
 }
 
+a:hover {
+	text-decoration: none;
+}
+
+a[href*=tionary], a[href*=wikipedia], a[href*=booking] {
+	text-decoration: none;
+	transition: color ease-out 0.2s;
+}
+
 a[href*=tionary] {
 	font-weight: 600;
-	text-decoration: none;
-	color: rgb(51, 51, 153);
+	color: rgb(var(--blue));
+}
+
+a[href*=tionary]:hover {
+	color: rgb(var(--blue), 0.5);
 }
 
 a[href*=wikipedia] {
-	text-decoration: none;
-	color: rgb(204, 51, 0);
+	color: rgb(var(--red));
+}
+
+a[href*=wikipedia]:hover {
+	color: rgb(var(--red), 0.5);
 }
 
 a[href*=booking] {
-	text-decoration: none;
-	color: rgb(0, 153, 51);
+	color: rgb(var(--green));
+}
+
+a[href*=booking]:hover {
+	color: rgb(var(--green), 0.5);
 }
 
 q, cite {
@@ -317,11 +350,11 @@ q, cite {
 	font-style: unset;
 }
 
-q::before, article cite::before {
+q::before, cite::before {
 	content: open-quote;
 }
 
-q::after, article cite::after {
+q::after, cite::after {
 	content: close-quote;
 }
 
@@ -380,14 +413,6 @@ article footer p {
 		display: block;
 	}
 
-	q::before, cite::before {
-		content: open-quote;
-	}
-
-	q::after, cite::after {
-		content: close-quote;
-	}
-
 	.drawer svg {
 		display: none !important;
 	}
@@ -424,8 +449,18 @@ article footer p {
 		font-size: 16px;
 		color: rgb(204, 51, 0);
 		display: inline-block;
+		cursor: pointer;
 	}
+
+	.toc li:first-child {
+		display: none;
+	}
+
 /*
+
+
+	transition: background-color 0.3s cubic-bezier(0, 0.59, 0.32, 1) 0s, color 0.3s cubic-bezier(0, 0.59, 0.32, 1) 0s, fill 0.3s cubic-bezier(0, 0.59, 0.32, 1) 0s, border-bottom-color 0.3s cubic-bezier(0, 0.59, 0.32, 1) 0s, border-bottom 0.3s cubic-bezier(0, 0.59, 0.32, 1) 0s, border-color 0.3s cubic-bezier(0, 0.59, 0.32, 1) 0s, height 0.3s cubic-bezier(0, 0.59, 0.32, 1) 0s, top 0.3s cubic-bezier(0, 0.59, 0.32, 1) 0s;
+
 	.tocHeader::before, .tocHeader::after {
 		content: "⌄";
 		display: inline-block;
@@ -447,7 +482,7 @@ article footer p {
 	#whiteOverlay {
 		visibility: hidden;
 		position: absolute;
-		background: rgba(255, 255, 255, 0.97);
+		background: rgb(255, 255, 255, 0.97);
 		width: 100%;
 		height: 100%;
 	}
@@ -460,10 +495,6 @@ article footer p {
 		list-style: none;
 		padding-left: 0px;
 		padding-bottom: 3em;
-	}
-
-	.toc li:first-child {
-		display: none;
 	}
 
 	.hover {

@@ -1,46 +1,23 @@
-* {
+﻿* {
 	--grid-gap: 1rem;
 	--grid-margin: 1.5rem;
+	--row-gap: 0px;
+	box-sizing: border-box;
 }
 
 body {
-	font-family:"Caslon Pro", serif;
+	font-family:"Caslon Pro", Times, serif;
 	font-size: 21px;
 	font-weight: 400;
 	line-height: 1.5em;
-	margin: 0 auto;
+	margin: 0px auto 6em;
 	text-size-adjust: 100%;
-    font-style: normal;
-    letter-spacing: normal;
-    line-break: auto;
-    padding-top: 3.5rem;
+	line-break: auto;
+	padding-top: 3.5rem;
+	-webkit-font-smoothing: antialiased;
 }
 
-header {
-	text-align: center;
-}
-
-header :last-child {
-	margin-bottom: 0px;
-}
-
-main {
-	width: 88vw;
-	margin: 0 auto;
-}
-
-p {
-	padding-bottom: 1rem;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-
-footer {
-	margin-top: 6em;
-}
+/* Navigation bar */
 
 .navbar {
 	position:fixed;
@@ -56,14 +33,35 @@ footer {
 	height: 3.5rem;
 	grid-template-columns: 5.5rem auto 5.5rem;
 	column-gap: var(--grid-gap);
-    row-gap: var(--grid-gap);
+    row-gap: var(--row-gap);
     background: rgb(255, 255, 255);
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
-	z-index: 500;
 }
 
+/* Top navigation bar */
+
+.navbar picture {
+	display: flex;
+	grid-column: 2;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	max-width: 13rem;
+	height: 100%;
+	text-align: center;
+}
+
+img[src*="logo"] {
+	max-height: 3rem;
+	height: auto;
+	vertical-align: middle;
+	width: 87%;
+}
+
+/* Drop-down navigation bar */
+
 .drawer {
-	grid-column: 1 / 2;
+	grid-column: 1;
     display: flex;
     justify-content: center;
     height: inherit;
@@ -83,8 +81,7 @@ footer {
 	cursor: pointer;
 }
 
-
-#toggle, .closeMenu, .toc2 {
+#toggle, .tocHeader, .closeMenu, .toc {
 	display: none;
 }
 
@@ -92,16 +89,16 @@ footer {
 	display: none;
 }
 
-#toggle:checked ~ .closeMenu, #toggle:checked ~ .toc2 {
+#toggle:checked ~ .closeMenu, #toggle:checked ~ .toc {
 	display: block;
 }
 
-.toc2 {
+.toc {
 	padding-top: 5rem;
 	padding-right: var(--grid-margin);
 	padding-left: var(--grid-margin);
 	background-image: linear-gradient(to left, rgba(255,255,255,0.5), 10%, rgba(255,255,255,0.99) 80% 100%);
-	width: 95vw;
+	width: 100vw;
 	height: 100vh;
 	overflow-y: scroll;
 	scrollbar-width: none;
@@ -120,193 +117,183 @@ footer {
   }
 }
 
-.toc2 ul {
+.toc ul {
 	display: flex;
 	flex-flow: column;
-	font-family: "Irvin Heading", serif;
+	font-family: "Irvin Heading", Helvetica, Arial, sans-serif;
 	line-height: 1.6em;
 	font-size: 16px;
 	text-align: left;
 	list-style: none;
 	padding-left: 0px;
-	margin-block-start: 1em;
-	margin-block-end: 1em;
-	margin-inline-start: 0px;
-	margin-inline-end: 0px;
 }
 
-.toc2 li {
+.toc li {
 	margin-bottom: 2rem;
 }
 
-.toc2 a {
+.toc a {
 	text-decoration: none;
 }
 
-
-.toc2 a:active {
-}
-
-.toc2 li:first-child {
+.toc li:first-child {
 	color: rgb(204, 51, 0);
 }
 
-picture {
-	display: flex;
+/* Article header */
+
+article {
+	display: grid;
+	grid-auto-rows: auto;
+    grid-template-columns: minmax(0px, 1fr) minmax(0px, 800px) minmax(0px, 1fr) [ full-end ];
+	overflow-x: hidden;
+	width: 100%;
+}
+article header, article main, article footer {
 	grid-column: 2;
-	align-items: center;
-	justify-content: center;
-	margin: auto;
-	max-width: 13rem;
-	height: 100%;
+}
+
+.headerTitle, article main, article footer {
+	display: grid;
+	grid-auto-rows: auto;
+	padding-right: var(--grid-margin);
+	padding-left: var(--grid-margin);
+}
+
+article header {
 	text-align: center;
 }
 
-img[src*="logo"] {
-	max-height: 3rem;
-	height: auto;
-	vertical-align: middle;
-	width: 87%;
+.headerTitle {
+	padding-top: 1rem;
+	padding-bottom: 1.5rem;
 }
 
 h1 {
-	font-family: "Irvin Heading", serif;
-	font-size: 1.6em;
+	font-family: "Irvin Heading", Helvetica, Arial, sans-serif;
+	line-height: 1.06667em;
+	font-size: 30px;
 	font-weight: 400;
-	line-height: 1.25em;
-	margin-top: 30vh;
+	letter-spacing: 0.0125em;
+	margin: 5rem 0.5rem 0px;
 }
 
-#newyorker h1 + * {
-	font-family: "Caslon Pro", serif;
-	font-size: 1em;
+#newyorker h1 + p {
+	font-family: "Caslon Pro", Times, serif;
+	line-height: 1.33333em;
+	font-size: 18px;
 	font-weight: 400;
-	line-height: 1.5em;
 	font-style: italic;
-}
-
-h2 {
-	font-family: "Graphik Medium",sans-serif;
-	font-size: 0.8em;
-	font-weight: 500;
-	line-height: 2em;
-	scroll-margin-top: 4.5em;
+	color: rgb(18, 18, 18);
+	margin-top: 1.1rem;
+	margin-bottom: 0px;
 }
 
 .author {
-	font-family: "Graphik Medium",sans-serif;
-	font-size: 0.7em;
+	font-family: "Neutraface Text", Helvetica, Arial, sans-serif;
+	line-height: 1.14286em;
+	font-size: 14.8px;
 	font-weight: 600;
-	line-height: 1.5em;
-	margin-bottom: 2.2em;
+	margin: 0.9rem 0px 0px;
 }
 
-.tocHeader {
-	font-family: "Irvin Heading";
-	font-size: 0.75em;
-	line-height: 1.75em;
-	padding: 1.5em;
-	color: rgb(204, 51, 0);
+.author a {
+	text-decoration: none;
 }
 
-.tocHeader::after {
-	content: "⌄";
-	display: block;
-	margin-top: -0.6em;
+.author a:hover {
+	text-decoration: underline;
 }
 
-.toc {
-	visibility: hidden;
-	position: absolute;
-	margin: 0 auto;
-	padding: 0px 30px 20px;
-	left: 50%;
-  	transform: translate(-50%, 0);
-  	z-index: 1;
+time {
+	font-family: "Graphik", Helvetica, Arial, sans-serif;
+	line-height: 1.7;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: -0.0125em;
+	color: rgb(102, 102, 102);
+	margin-top: 0.35rem;
+	margin-bottom: 0px;
 }
 
-#whiteOverlay {
-	visibility: hidden;
-	position: absolute;
-	background: rgba(255, 255, 255, 0.97);
+.headerTitle::after {
+	border-bottom: 1px solid rgb(229, 229, 229);
+	padding-top: 2rem;
 	width: 100%;
-	height: 100%;
+	height: 0px;
+	content: "";
+	display: none;
 }
 
-.toc ul {
-	font-family: "Graphik Medium", sans-serif;
-	font-size: 0.75em;
-	line-height: 1.75em;
-	text-align: center;
-	list-style: none;
-	padding-left: 0px;
-	padding-bottom: 3em;
+article header img {
+	margin-top: 0.6rem;
+	box-sizing: border-box;
+	max-height: 900px;
 }
 
-.hover {
-	width: fit-content;
-	display: block;
-	margin: 0 auto;
-	text-align: center;
+img + p {
+	font-family: "Graphik", Helvetica, Arial, sans-serif;
+	line-height: 1.23077em;
+	font-size: 13px;
+	font-weight: 400;
+	color: rgb(102, 102, 102);
+	margin-top: -0.3em;
+	margin-bottom: 0px;
+	margin-right: var(--grid-margin);
+	margin-left: var(--grid-margin);
 }
 
-.hover:hover .toc, .hover:hover + #whiteOverlay {
-	visibility: visible;
-}
-
-.hover:hover .tocHeader::after {
-	visibility: hidden;
-}
-
-.has-dropcap::first-letter {
-    line-height: 1em;
-    font-size: 3em;
-    float: left;
-    margin-bottom: -0.2em;
-    padding: 1.1rem 0.05em 0px 0px;
-}
-
-.small-caps {
-	font-variant: small-caps;
-}
-
-img {
-	max-width: 100%;
-}
-
-#stories main img:not(:first-child) {
-	margin-top: 1em;
-}
-
-#caption {
-	font-size: 0.86em;
-	margin-top: -0.25em;
-	font-style: italic;
-}
-
-#attribution {
-	font-family: "Graphik Medium",sans-serif;
-	font-size: 0.65em;
+.captionCredit {
+	margin-left: 0.3rem;
+	font-family: "Graphik", Helvetica, Arial, sans-serif;
+	line-height: 1.23077em;
+	font-size: 13px;
+	font-weight: 400;
 	font-style: normal;
 	color: rgb(204, 204, 204);
 }
 
-#date {
-	font-family: "Graphik Medium", sans-serif;
-	font-size: 80%;
-	font-weight: 400;
-	margin-left: 1em;
+/* Article body */
+
+article main {
+	padding-top: 2rem;
+	border-bottom: 1px solid rgb(229, 229, 229);
 }
 
-#stories img + p {
-	font-family: "Graphik Medium", sans-serif;
-	font-size: 0.6em;
-	margin-top: -0.3em;
-	color: rgb(204, 204, 204);
+h2 {
+	font-family: "Graphik", Helvetica, Arial, sans-serif;
+	font-size: 22px;
+	font-weight: 500;
+	line-height: 1em;
+	margin-bottom: 1.5em;
+	scroll-margin-top: 4.5em;
+}
+
+hr {
+	border: 1px solid rgb(229, 229, 229);
+	width: 100%;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.has-dropcap::first-letter {
+	line-height: 1em;
+	font-size: 60px;
+	font-weight: 400;
+	overflow-wrap: normal;
+	float: left;
+	margin-bottom: -0.2em;
+	padding: 0.2em 0.05em 0px 0px;
+}
+
+.small-caps {
+	font-variant: small-caps;
+	text-transform: lowercase;
+	font-style: normal;
 }
 
 a {
-	color: black;
+	color: rgb(0, 0, 0);
 }
 
 a[href*=tionary] {
@@ -327,61 +314,205 @@ a[href*=booking] {
 
 q, cite {
 	quotes: "“" "”" "‘" "’";
-	font-style: normal;
+	font-style: unset;
 }
 
-q::before, cite::before {
+q::before, article cite::before {
 	content: open-quote;
 }
 
-q::after, cite::after {
+q::after, article cite::after {
 	content: close-quote;
 }
 
-hr {
-	border: 0;
-	height: 1px;
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
-	background: rgb(204, 204, 204);
+img {
+	max-width: 100%;
 }
 
-@media only screen and (min-width: 767px) {
+article main img {
+	margin-top: 1em;
+}
 
-	body {
-		font-size: 1.65em;
-		line-height: 1.5em;
-		margin: 7% auto;
-		padding: 10px 20px 10px 20px;
-		max-width: 900px;
-	}
+article main img + p {
+	margin: 0.4rem 0px 0px;
+}
 
-	footer {
-		margin-top: 4em;
+
+/* Article footer */
+
+article footer {
+	padding-top: 2rem;
+}
+
+article footer p {
+	font-style: italic;
+}
+
+
+
+ /* Responsive design for laptop */
+
+@media (min-width: 767px) {
+
+	* {
+		--grid-margin: 3rem;
+		--grid-gap: 2rem;
+		--row-gap: 0px;
 	}
 
 	h1 {
-		line-height: 1em;
-		margin-top: 1em;
+		font-size: 36px;
+		line-height: 1.11111em;
+		margin-top: 7rem;
 	}
 
+	#newyorker h1 + p {
+		font-size: 21px;
+		line-height: 1.33333em;
+	}
 
-.has-dropcap::first-letter {
-    line-height: 1em;
-    font-size: 3.4em;
-    float: left;
-    margin-bottom: -0.2em;
-    padding: 0.1em 0.05em 0px 0px;
+	article header img {
+		padding-right: var(--grid-margin);
+		padding-left: var(--grid-margin);
+	}
+
+	.headerTitle::after {
+		display: block;
+	}
+
+	q::before, cite::before {
+		content: open-quote;
+	}
+
+	q::after, cite::after {
+		content: close-quote;
+	}
+
+	.drawer svg {
+		display: none !important;
+	}
+
+	.grid {
+		height: auto;
+	}
+
+	.navbar picture {
+		grid-column: 1 / span 3;
+		grid-row: 1;
+		height: 4rem;
+		border-bottom: 1px solid rgb(229, 229, 229);
+		width: 100%;
+		max-width: 100%;
+	}
+ 
+	.drawer {
+		display: flex;
+		position: sticky;
+		grid-column: 2;
+		grid-row: 2;
+		height: 3rem;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		z-index: 1;
+		width: 100%;
+	}
+
+	.tocHeader {
+		font-family: "Irvin Heading", Helvetica, Arial, sans-serif;
+		line-height: 1.6em;
+		font-size: 16px;
+		color: rgb(204, 51, 0);
+		display: inline-block;
+	}
+/*
+	.tocHeader::before, .tocHeader::after {
+		content: "⌄";
+		display: inline-block;
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+		transform: translate(0, -0.4rem);
+	}
+
+	.toc {
+		visibility: hidden;
+		position: absolute;
+		margin: 0 auto;
+		padding: 0px 30px 20px;
+		left: 50%;
+	  	transform: translate(-50%, 0);
+	  	z-index: 1;
+	}
+
+	#whiteOverlay {
+		visibility: hidden;
+		position: absolute;
+		background: rgba(255, 255, 255, 0.97);
+		width: 100%;
+		height: 100%;
+	}
+
+	.toc ul {
+		font-family: "Graphik", Helvetica, Arial, sans-serif;
+		font-size: 0.75em;
+		line-height: 1.75em;
+		text-align: center;
+		list-style: none;
+		padding-left: 0px;
+		padding-bottom: 3em;
+	}
+
+	.toc li:first-child {
+		display: none;
+	}
+
+	.hover {
+		width: fit-content;
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.hover:hover .toc, .hover:hover + #whiteOverlay {
+		visibility: visible;
+	}
+
+	.hover:hover .tocHeader::after {
+		visibility: hidden;
+	}
+*/	
 }
 
-
-}
 
 @font-face {
     font-family: "Irvin Heading";
     font-weight: 400;
     src: url("fonts/Irvin-Heading.woff2") format("woff2");
     }
+
+@font-face {
+    font-family: "Neutraface Text";
+    font-weight: 600;
+    src: url("fonts/Neutraface-Text-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Graphik";
+    font-weight: 400;
+    src: url("fonts/Graphik-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Graphik";
+    font-weight: 500;
+    src: url("fonts/Graphik-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Graphik";
+    font-weight: 700;
+    src: url("fonts/Graphik-Bold.otf") format("opentype");
+}
 
 @font-face {
     font-family: "Caslon Pro";
@@ -394,10 +525,4 @@ hr {
     font-weight: 400;
     font-style: italic;
     src: url("fonts/Caslon-Pro-Italic.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Graphik Medium";
-    font-weight: 500;
-    src: url("fonts/Graphik-Medium.woff2") format("woff2");
 }

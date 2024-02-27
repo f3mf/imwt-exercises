@@ -325,7 +325,7 @@ hr {
 	overflow-wrap: normal;
 	float: left;
 	margin-bottom: -0.2em;
-	padding: 0.2em 0.05em 0px 0px;
+	padding: 0.1em 0.05em 0px 0px;
 }
 
 .small-caps {
@@ -552,8 +552,16 @@ article footer p {
 	.chevron {
 		display: none;
 	}
-}
 
+	#toggle:checked ~ .closeMenu {
+	display: none;
+	}
+
+	#toggle:checked ~ .toc {
+	display: flex;
+	}
+
+}
 
 
 @font-face {

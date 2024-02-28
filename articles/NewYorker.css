@@ -1,10 +1,13 @@
-﻿* {
+﻿:root {
 	--grid-gap: 1rem;
 	--grid-margin: 1.5rem;
 	--row-gap: 0px;
 	--blue: 51, 51, 153;
 	--green: 0, 153, 51;
 	--red: 204, 51, 0;
+}
+
+* {
 	box-sizing: border-box;
 }
 
@@ -16,7 +19,7 @@ body {
 	margin: 0px auto 6em;
 	text-size-adjust: 100%;
 	line-break: auto;
-	padding-top: 3.5rem;
+	padding-top: 3rem;
 	font-smoothing: antialiased;
 }
 
@@ -196,8 +199,8 @@ article header, article main, article footer {
 .headerTitle, article main, article footer {
 	display: grid;
 	grid-auto-rows: auto;
-	padding-right: var(--grid-margin);
-	padding-left: var(--grid-margin);
+	margin-right: var(--grid-margin);
+	margin-left: var(--grid-margin);
 }
 
 article header {
@@ -285,7 +288,7 @@ img + p {
 	margin-left: var(--grid-margin);
 }
 
-.captionCredit {
+.credit {
 	margin-left: 0.3rem;
 	font-family: "Graphik", Helvetica, Arial, sans-serif;
 	line-height: 1.23077em;
@@ -300,6 +303,7 @@ img + p {
 article main {
 	padding-top: 2rem;
 	border-bottom: 1px solid rgb(229, 229, 229);
+	padding-bottom: 2rem;
 }
 
 h2 {
@@ -423,8 +427,8 @@ article footer p {
 	/* Article body */
 
 	body {
-		margin-top: 3rem;
-		padding-top: 0rem;
+		margin-top: 0rem;
+		padding-top: 4rem;
 	}
 
 	h1 {
@@ -443,6 +447,10 @@ article footer p {
 		padding-left: var(--grid-margin);
 	}
 
+	article header img + p {
+		text-align: left;
+	}
+
 	.headerTitle::after {
 		display: block;
 	}
@@ -452,7 +460,7 @@ article footer p {
 	.navbar {
 		max-height: unset;
 		overflow-y: visible;
-		position: sticky;
+		height: 7rem;
 	}
 
 	.drawer svg {
@@ -460,27 +468,34 @@ article footer p {
 	}
 
 	.grid {
-		height: 4rem;
-		position: relative;
-		padding-top: 1rem;
-		grid-template-columns: none;
-		z-index: 1;
+		grid-template-columns: 1fr;
+		background: none;
+		box-shadow: none;
+		margin: 0 auto;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
 	}
 
 	.navbar picture {
 		grid-row: 1;
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
+		grid-column: 1 / -1;
 		background: rgb(255, 255, 255);
 		border-bottom: 1px solid rgb(229, 229, 229);
 		width: 100%;
 		max-width: 100%;
 		height: 4rem;
+		margin: 0 auto;
+		z-index: 2;
+	}
+
+	#newyorker .navbar picture {
+		border-bottom: none;
+		box-shadow: rgb(0, 0, 0, 0.1) 0px 2px 4px;
 	}
  
 	.drawer {
+		grid-column: 1 / -1;
 		grid-row: 2;
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
@@ -490,6 +505,18 @@ article footer p {
 		width: 100%;
 		height: 3rem;
 		margin: 0 auto;
+		background: rgb(255, 255, 255);
+		box-shadow: rgb(0, 0, 0, 0.1) 0px 2px 4px;
+	}
+
+	.scrolled-down{
+	transform:translateY(-3rem);
+	transition: all 0.3s ease-in-out;
+	}
+
+	.scrolled-up{
+	transform:translateY(0);
+	transition: all 0.3s ease-in-out;
 	}
 
 	.toc {

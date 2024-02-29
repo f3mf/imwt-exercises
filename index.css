@@ -1,62 +1,77 @@
 body {
 	display: flex;
+	flex-flow: column;
 	width: 100vw;
 	height: 100vh;
 	font-family: "Poliphili Display";
-	font-size: 3.5em;
+	font-size: 72px;
 	line-height: 1.25;
-	hyphens: auto;
-	text-align: center;
-}
-
-#wrap {
-	width: 80vmin;
-	min-width: 715px;
-	height: 95vmin;
-	min-height: 900px;
-	margin: auto auto;
+	hyphens: manual;
+	hyphenate-character: "";
+	text-size-adjust: 100%;
+	justify-content: center;
+	align-content: center;
 	overflow: hidden;
 }
 
-span::before, span::after {
+#wrap {
+	width: 810px;
+	height: 730px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#wrap > span::before, #wrap > span::after {
 	content: "";
 	width: 50%;
 	height: 100%;
 }
 
-span::before {
-	shape-outside: polygon(0% 0%, 70% 100%, 0% 100%);
-	clip-path: polygon(0% 0%, 70% 100%, 0% 100%);
+#wrap > span::before {
+	shape-outside: polygon(0% 0%, 60% 100%, 0% 100%);
+	clip-path: polygon(0% 0%, 60% 100%, 0% 100%);
 	float: left;
 }
 
-span::after {
-	shape-outside: polygon(100% 0%, 30% 100%, 100% 100%);
-	clip-path: polygon(100% 0%, 30% 100%, 100% 100%);
+#wrap > span::after {
+	shape-outside: polygon(100% 0%, 40% 100%, 100% 100%);
+	clip-path: polygon(100% 0%, 40% 100%, 100% 100%);
 	float: right;
 }
 
 #text {
 	height: fit-content;
-	margin-top: 5%;
-}
-
-#text > div {
-	margin-top: 0em;
-	margin-bottom: 0.5em;
+	text-align: justify;
 }
 
 #deco {
+	margin-top: 1rem;
 	margin-bottom: -0.25em;
 	line-height: 1em;
+	text-align: center;
+	margin: 0 auto;
 }
 
 a {
 	text-decoration: none;
 }
 
+#text span:not(span:last-of-type)::after {
+	content: "•";
+	padding-left: 0.1em;
+	padding-right: 0.1em;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	white-space: pre-wrap;
+}
+
 a:active {
 	color: black;
+}
+
+a:hover {
+
 }
 
 .red:link {

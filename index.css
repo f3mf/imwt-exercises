@@ -1,14 +1,13 @@
 body {
 	display: flex;
 	flex-flow: column;
-	width: 100vw;
 	height: 100vh;
+	width: 100vw;
 	font-family: "Poliphili Display";
 	font-size: 72px;
 	line-height: 1.25;
 	hyphens: manual;
 	hyphenate-character: "";
-	text-size-adjust: 100%;
 	justify-content: center;
 	align-content: center;
 	overflow-x: hidden;
@@ -20,6 +19,7 @@ body {
 	height: 730px;
 	margin: 0 auto;
 	overflow: hidden;
+	box-sizing: border-box;
 }
 
 #wrap > span::before, #wrap > span::after {
@@ -56,6 +56,7 @@ body {
 
 a {
 	text-decoration: none;
+	transition: color ease-out 0.2s;
 }
 
 #text span:not(span:last-of-type)::after {
@@ -72,10 +73,6 @@ a:active {
 	color: black;
 }
 
-a:hover {
-
-}
-
 .red:link {
 	color: rgb(255, 51, 0);
 }
@@ -85,7 +82,7 @@ a:hover {
 }
 
 .red:hover {
-	color: rgb(255, 102, 102);
+	color: rgb(255, 51, 0, 0.5);
 }
 
 .green:link {
@@ -97,7 +94,7 @@ a:hover {
 }
 
 .green:hover {
-	color: rgb(102, 153, 102);
+	color: rgb(0, 153, 51, 0.5);
 }
 
 .gold:link {
@@ -109,7 +106,7 @@ a:hover {
 }
 
 .gold:hover {
-	color: rgb(204, 153, 102);
+	color: rgb(204, 153, 0, 0.5);
 }
 
 .turquoise:link {
@@ -121,7 +118,7 @@ a:hover {
 }
 
 .turquoise:hover {
-	color: rgb(102, 204, 204);
+	color: rgb(0, 204, 204, 0.5);
 }
 
 @font-face {
@@ -142,7 +139,6 @@ a:hover {
 	#wrap {
 		width: 318.75px;
 		height: 498px;
-		overflow: visible;
 	}
 
 	#wrap > span::before {

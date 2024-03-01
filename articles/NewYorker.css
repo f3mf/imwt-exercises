@@ -20,7 +20,6 @@ body {
 	text-size-adjust: 100%;
 	line-break: auto;
 	padding-top: 3rem;
-	font-smoothing: antialiased;
 }
 
 /* Navigation bar */
@@ -119,15 +118,15 @@ img[src*="logo"] {
 	cursor: pointer;
 }
 
-#toggle, .closeMenu, .toc {
+.closeMenu, .toc {
 	display: none;
 }
 
-#toggle:checked ~ .openMenu {
+.isOpen .openMenu {
 	display: none;
 }
 
-#toggle:checked ~ .closeMenu, #toggle:checked ~ .toc {
+.isOpen .closeMenu, .isOpen .toc {
 	display: block;
 }
 
@@ -509,12 +508,12 @@ article footer p {
 		box-shadow: rgb(0, 0, 0, 0.1) 0px 2px 4px;
 	}
 
-	.scrolled-down{
+	.scrolledDown{
 	transform:translateY(-3rem);
 	transition: all 0.3s ease-in-out;
 	}
 
-	.scrolled-up{
+	.scrolledUp{
 	transform:translateY(0);
 	transition: all 0.3s ease-in-out;
 	}
@@ -590,6 +589,7 @@ article footer p {
 
 }
 
+ /* Responsive design for laptop */
 
 @font-face {
     font-family: "Irvin Heading";

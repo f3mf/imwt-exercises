@@ -1,16 +1,142 @@
-﻿body {
-	font-family: "Chronicle Display", serif;
-	font-size: 22px;
-	line-height: 1.5em;
-	margin: 0 auto;
-	padding: 10px 20px 10px 20px;
-	max-width: 750px;
+﻿:root {
+	--nav-height: 4.6rem;
+	--nav-padding-x: .625rem;
+	--nav-padding-y: .5rem;
+	--blue: 51, 51, 153;
+	--green: 0, 153, 51;
+	--red: 204, 51, 0;
 }
 
-footer {
-	margin-top: 3em;
-	margin-bottom: 5em;
+* {
+	box-sizing: border-box;
 }
+
+body {
+	font-family: "Chronicle Display", Georgia, Times, serif;
+	font-size: 20px;
+	line-height: 1.5em;
+	margin: 0 auto 6em;
+	line-break: auto;
+	font-smoothing: antialiased;
+}
+
+/* Navigation bar */
+
+nav {
+	position:fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	height: 0px;
+}
+
+.navWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	height: var(--nav-height);
+	padding: var(--nav-padding-x) var(--nav-padding-y);
+	background: rgb(255, 255, 255);
+	border-bottom: 5px solid;
+	z-index: 10;
+}
+
+.drawer, .chevron {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0 1 2.5rem;
+	height: 2.5rem;
+	border: solid 1.5px;
+	border-radius: 50%;
+	transition: color .2s ease-in-out;
+}
+
+.drawer {
+    margin-right: 1.25rem;
+}
+
+.chevron {
+	justify-self: end;
+	margin-left: auto;
+}
+
+.drawer:hover, .chevron:hover {
+	color: #f75a38;
+	fill: #f75a38;
+}
+
+.drawer svg, .chevron svg {
+	color: rgb(0, 0, 0);
+	width: 2rem;
+	height: 2rem;
+	cursor: pointer;
+	transition: fill .2s ease-in-out;
+}
+
+.chevron svg {
+	rotate: 270deg;
+}
+
+.closeMenu, .tocWrapper {
+	display: none;
+}
+
+.isOpen .openMenu {
+	display: none;
+}
+
+.isOpen .closeMenu, .isOpen + .tocWrapper {
+	display: block;
+}
+
+.logoWrapper {
+	flex: 0 1 156px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: var(--nav-height);
+	overflow: hidden;
+}
+
+.logo {
+	transition: fill .2s ease-in-out;
+}
+
+.logoWrapper:hover .logo {
+	fill: #f75a38;
+}
+
+.tocWrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background: rgb(0, 0, 0, 0.9);
+	z-index: -1;
+}
+
+.toc {
+	margin-top: var(--nav-height);
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	text-align: left;
+	list-style: none;
+	padding: 20px;
+	height: 70%;
+}
+
+.toc a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	transition: color .2s ease-in-out;
+}
+
+/* Article header */
+
+
+/* Article body */
 
 h1 {
 	font-family: "Chronicle Display", serif;
@@ -73,8 +199,8 @@ footer p {
 	margin-bottom: 4em;
 }
 
-a {
-	color: black;
+article a {
+	color: rgb(0, 0, 0);
 	text-decoration-thickness: 2px;
 }
 
@@ -111,12 +237,11 @@ img {
 	margin-top: 2em;
 }
 
-.logo{
-	display: block;
-	width: 25%;
-	margin-bottom: 2.5em;
-	margin-right: auto;
+a:hover {
+	border-bottom-color: #f75a38;
+	color: #f75a38;
 }
+
 
 table {
 	width: 100%;
@@ -134,6 +259,13 @@ th {
 	border-top: 8px solid;
 }
 
+/* Article footer */
+
+footer {
+	margin-top: 3em;
+	margin-bottom: 5em;
+}
+
 hr {
 	border: 0;
 	background:rgba(229,229,229,1);
@@ -144,6 +276,35 @@ footer hr:nth-child(4n+3) {
 	height: 8px;
 	background: black;
 }
+
+ /* Responsive design for laptop */
+
+@media (min-width: 767px) {
+
+	:root {
+		--nav-height: 4.9rem;
+		--nav-padding-x: .625rem;
+		--nav-padding-y: 1.25rem;
+	}
+
+	body {
+		font-size: 21px;
+	}
+
+	nav {
+		position: absolute;
+	}
+
+	.drawer, .chevron {
+		display: none;
+	}
+
+	.logoWrapper {
+		position: fixed;
+	}
+}
+
+ /* Fonts */
 
 @font-face {
     font-family: "Titillium Web";

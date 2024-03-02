@@ -315,8 +315,10 @@ h2 {
 }
 
 hr {
-	border: 1px solid rgb(229, 229, 229);
+	border: 0;
+	height: 1px;
 	width: 100%;
+	background: rgb(229, 229, 229);
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 }

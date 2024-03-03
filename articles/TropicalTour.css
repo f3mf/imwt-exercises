@@ -1,33 +1,91 @@
-﻿.navbar {
+﻿/* All devices */
+
+:root {
+    --bs-focus-ring-color: rgb(var(--bs-success-rgb), .25);
+    --bottom-nav-height: 13.5rem;
+    --bs-icon-link-transform: translate3d(0, -.125rem, 0);
+}
+
+body {
+    background-image: url(imgs/TropicalTour/Odilon-Redon-Underwater-Vision-2.jpg);
+}
+
+.navbar {
     background-color: #00796B;
 }
 
-.excited {
+.excited, .excited-icon img {
     transition: .2s ease-in-out transform;
 }
 
-.excited:hover, .excited:focus, .excited:active {
+.excited:hover, .excited:focus, .excited:active, .excited-icon:hover img, .excited-icon:focus img, .excited-icon:active img {
     transform: translate3d(0, -.125rem, 0)
 }
 
+.sticky-bottom {
+    bottom: unset;
+    top: calc(100vh + var(--bottom-nav-height));
+    height: var(--bottom-nav-height);
+}
 
+.accordion {
+    --bs-accordion-active-color: var(--bs-success-text-emphasis);
+    --bs-accordion-active-bg: var(--bs-success-bg-subtle);
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%230a3622' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgb(var(--bs-success-rgb), .25);
+    --bs-accordion-bg: rgb(255, 255, 255, 0.8);
+  }
+
+.accordion-button:not(.collapsed) {
+    color: var(--bs-success-text-emphasis);
+    background-color: var(--bs-success-bg-subtle);
+    box-shadow: inset 0 calc(-1* var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: var(--bs-accordion-btn-active-icon);
+    transform: var(--bs-accordion-btn-icon-transform);
+}
+
+.carousel-inner.card {
+    display: block;
+}
+
+/* Smartphone only */
 
 @media (max-width: 767px) {
-.navbar {
+
+body {
+    background-size: cover;
+    background-attachment: fixed;
+    height: calc(100vh + var(--bottom-nav-height));
+}
+
+.fixed-top {
     position: static;
 }
 
-.accordion-item:nth-child(2) .accordion-body {
-    padding: 0;
-}
-
-#carouselCaptions {
-    height: fit-content;
+.accordion-item:first-child .accordion-body {
+    height: calc(100vh - 10rem);
     overflow: scroll;
 }
 
+.accordion-item:nth-child(2) .accordion-body {
+    height: calc(100vh - 13.3rem);
+}
+
+#carouselCaptions {
+    height: 100%;
+}
+
 .carousel-inner {
-    overflow: visible;
+    height: inherit;
+    padding-bottom: 2.5rem;
+}
+
+.carousel-item {
+    height: inherit;
+    overflow: scroll;
 }
 
 .carousel-caption {
@@ -35,10 +93,10 @@
     top: 0;
     left: 0;
     right: 0;
-    padding: 0;
-    padding: 2rem 0;
-    margin: auto 4em;
+    padding: var(--bs-card-spacer-y) 3.5em 0;
+    margin: 0;
     color: var(--bs-body-color);
+    text-align: left;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -55,10 +113,34 @@
 
 }
 
-@media (min-width: 767px) {
+/* Tablet and desktop */
+
+@media (min-width: 768px) {
+
 body {
-    max-width: 1200px;
-    margin: 3.5rem auto;
+    margin: 3.5rem auto 0;
+    background-repeat: round repeat;
+    background-attachment: scroll;
+    height: calc(100vh + var(--bottom-nav-height) - 3.5rem);
+}
+
+.accordion {
+    border-top: 4em solid rgb(255, 255, 255, 0.8);
+    border-bottom: 4em solid rgb(255, 255, 255, 0.8);
+    border-right: 1em solid rgb(255, 255, 255, 0.8);
+    border-left: 1em solid rgb(255, 255, 255, 0.8);
+}
+
+.accordion-item:nth-child(2) .accordion-body {
+    height: calc(100vh - 26rem);
+}
+
+.carousel-caption {
+    font-size: 70%;
+}
+
+.carousel {
+    max-width: 800px;
 }
 
 .carousel-item::after {
@@ -77,5 +159,36 @@ body {
     z-index: 1;
 }
 
+.h-md-100 {
+    height: 100%;
+}
+
+.rounded-md-start {
+    border-bottom-left-radius: var(--bs-border-radius) !important;
+    border-top-left-radius: var(--bs-border-radius) !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+}
+
+/* Desktop only */
+
+@media (min-width: 1200px) {
+
+body {
+    max-width: 1800px;
+}
+
+.accordion {
+    border-top: 4em solid rgb(255, 255, 255, 0.8);
+    border-bottom: 4em solid rgb(255, 255, 255, 0.8);
+    border-right: 5em solid rgb(255, 255, 255, 0.8);
+    border-left: 5em solid rgb(255, 255, 255, 0.8);
+}
+
+.accordion-item:nth-child(2) .accordion-body {
+    height: calc(100vh - 24rem);
+}
 
 }

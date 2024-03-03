@@ -301,6 +301,7 @@ a[href*="dictionary"], a[href*="philosophy"] {
 	text-decoration: none;
 	font-weight: 600;
 	color: rgb(var(--blue));
+	cursor: help;
 }
 
 a[href*="wikipedia"] {

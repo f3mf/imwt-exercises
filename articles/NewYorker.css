@@ -355,6 +355,7 @@ a[href*=tionary], a[href*=wikipedia], a[href*=booking] {
 a[href*=tionary] {
 	font-weight: 600;
 	color: rgb(var(--blue));
+	cursor: help;
 }
 
 a[href*=tionary]:hover {

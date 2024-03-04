@@ -52,13 +52,36 @@ body {
     display: block;
 }
 
+.is-invalid ~ .invalid-feedback, .was-validated :invalid ~ .invalid-feedback {
+    display: block;
+    visibility: hidden;
+}
+
+.is-invalid ~ .invalid-feedback, .was-validated :invalid ~ .invalid-feedback {
+  visibility: visible;
+}
+
+#username, #password {
+    padding-right: calc(1.5em + .75rem);
+}
+
+blockquote {
+    height: fit-content;
+}
+
+.rounded-top {
+    border-top-left-radius: calc(var(--bs-border-radius) - (var(--bs-border-width))) !important;
+    border-top-right-radius: calc(var(--bs-border-radius) - (var(--bs-border-width))) !important;
+}
+
 /* Smartphone only */
 
 @media (max-width: 767px) {
 
 body {
-    background-size: cover;
+    background-size: 200%;
     background-attachment: fixed;
+    background-position-y: bottom;
     height: calc(100vh + var(--bottom-nav-height));
 }
 
@@ -67,12 +90,12 @@ body {
 }
 
 .accordion-item:first-child .accordion-body {
-    height: calc(100vh - 10rem);
+    height: calc(100vh - 13.3rem);
     overflow: scroll;
 }
 
 .accordion-item:nth-child(2) .accordion-body {
-    height: calc(100vh - 13.3rem);
+    height: calc(100vh - 16.6rem);
 }
 
 #carouselCaptions {
@@ -138,10 +161,6 @@ body {
     border-left: 1em solid rgb(255, 255, 255, 0.8);
 }
 
-.accordion-item:nth-child(2) .accordion-body {
-    height: calc(100vh - 26rem);
-}
-
 .carousel-caption {
     font-size: 90%;
 }
@@ -170,13 +189,6 @@ body {
     height: 100%;
 }
 
-.rounded-md-start {
-    border-bottom-left-radius: var(--bs-border-radius) !important;
-    border-top-left-radius: var(--bs-border-radius) !important;
-    border-bottom-right-radius: 0 !important;
-    border-top-right-radius: 0 !important;
-}
-
 }
 
 /* Desktop only */
@@ -194,12 +206,15 @@ body {
     border-left: 5em solid rgb(255, 255, 255, 0.8);
 }
 
-.accordion-item:nth-child(2) .accordion-body {
-    height: calc(100vh - 26rem);
-}
-
 .carousel-caption {
     font-size: revert;
+}
+
+.rounded-xl-start {
+    border-bottom-left-radius: calc(var(--bs-border-radius) - (var(--bs-border-width))) !important;
+    border-top-left-radius: calc(var(--bs-border-radius) - (var(--bs-border-width))) !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
 }
 
 }

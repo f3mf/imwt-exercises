@@ -1,6 +1,30 @@
+// Disabling form submissions if there are invalid fields
+
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  });
+})();
+
+
+// Month input shown by "I'm flexible" checkbox
+
 window.onload = function() {
 
-  const bookForm = document.getElementById("bookForm");
   const month = document.getElementById("month");
   const label = document.getElementById("monthLabel");
   const arrival = document.getElementById("dateFrom");
@@ -14,12 +38,18 @@ window.onload = function() {
       month.style.visibility = "visible";
       month.style.display = "block";
       label.style.visibility = "visible";
-      label.style.display = "block";
+      label.style.display = "inline-block";
+      
+      if (month.hasAttribute("disabled")) {
+      month.removeAttribute("disabled");
+      }
+    
     }
 
     else {
       arrival.removeAttribute("disabled");
       departure.removeAttribute("disabled");
+      month.setAttribute("disabled", "");
 
       if (window.innerWidth < 768) {
         month.style.display = "none";
@@ -36,6 +66,23 @@ window.onload = function() {
   });
 
 };
+
+// On submit 
+
+
+// Enable autofocus on modal elements
+const myModal = document.getElementById("bookModal");
+const myInput = document.getElementById("island");
+
+myModal.addEventListener("shown.bs.modal", () => {
+  myInput.focus()
+});
+
+
+
+
+
+// Validation of dates
 
 
 /* Validation of dates

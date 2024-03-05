@@ -93,9 +93,11 @@ blockquote {
 
 #flexible.form-check-input:valid ~ .form-check-label {
     color: unset;
+}
 
 #flexible.form-check-input:valid {
     border-color: unset;
+}
 
 /* Smartphone only */
 

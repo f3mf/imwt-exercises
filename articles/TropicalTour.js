@@ -139,12 +139,6 @@ registrationEl.addEventListener("show.bs.modal", event => {
       }
 
 
-
-
-
-drawer.classList.remove("isOpen");
-
-
   bookForm.onsubmit = function() {
     if (this.my_checkbox[0].checked && this.input1.value=="") {
       alert("Please enter something in input 1");

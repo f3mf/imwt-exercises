@@ -1,34 +1,38 @@
 // Disabling form submissions if there are invalid fields
 
-(() => {
-  'use strict'
+var forms = document.querySelectorAll('.needs-validation')
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation')
+Array.from(forms).forEach(form => {
+  var formId = form.getAttribute("id")
+  let button = document.querySelector("[form=" + formId + "]");
 
-  // Loop over them and prevent submission
+  button.addEventListener('click', event => {
+    form.classList.add('was-validated');
 
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
 
-      form.classList.add('was-validated')
-    }, false)
-  });
-})();
+  }, false);
 
+});
+
+
+// Enable autofocus on modal elements
+
+bookModalEl.addEventListener("shown.bs.modal", () => {
+  island.focus()
+});
 
 // Month input shown by "I'm flexible" checkbox
 
 window.onload = function() {
 
-  const month = document.getElementById("month");
-  const label = document.getElementById("monthLabel");
-  const arrival = document.getElementById("dateFrom");
-  const departure = document.getElementById("dateTo");
+  var month = document.getElementById("month");
+  var label = document.getElementById("monthLabel");
+  var arrival = document.getElementById("dateFrom");
+  var departure = document.getElementById("dateTo");
   var flexible = document.getElementById("flexible");
 
   flexible.addEventListener("click", () => {
@@ -67,25 +71,76 @@ window.onload = function() {
 
 };
 
-// On submit 
-
-
-// Enable autofocus on modal elements
-const myModal = document.getElementById("bookModal");
-const myInput = document.getElementById("island");
-
-myModal.addEventListener("shown.bs.modal", () => {
-  myInput.focus()
-});
-
-
-
-
-
 // Validation of dates
 
 
-/* Validation of dates
+/* Draft
+
+var bookForm = document.getElementById("bookForm");
+var bookModalEl = document.getElementById("bookModal");
+var island = document.getElementById("island");
+var nextButton = document.getElementById("nextButton");
+var registrationEl = document.getElementById("registration");
+
+if (bookModalEl) {
+
+    bookModalEl.addEventListener("toggle.bs.modal", event => {
+
+      if (!bookForm.checkValidity()) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        };
+
+    });
+
+};
+
+
+
+registrationEl.addEventListener("show.bs.modal", event => {
+
+    if (!bookForm.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+  });
+
+          var formModalEl =form.closest(".modal");
+          var formModal = bootstrap.Modal.getInstance(formModalEl); 
+          var nextModalId = button.getAttribute("data-bs-target");
+          var nextModalEl = document.querySelector("'" + nextModalId + "'");
+          var nextModal = bootstrap.Modal.getInstance(nextModalEl);
+
+          formModalEL.hide.bs.modal.preventDefault();
+          nextModalEl.show.bs.modal.preventDefault();
+
+
+
+
+
+      else {
+
+        var formModal = form.closest(".modal");
+        var button = document.formModal.querySelectorAll('[type="submit"]');
+
+        if (button[0].hasAttribute("data-bs-target")) {
+
+          var nextModal = buttons[0].getAttribute("data-bs-target");
+
+          formModal.modal("hide");
+          nextModal.modal("toggle");
+
+        }
+
+        else {
+          formModal.modal("hide");
+        }
+      }
+
+
+
+
 
 drawer.classList.remove("isOpen");
 

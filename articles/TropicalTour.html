@@ -25,12 +25,12 @@
             <a class="nav-link text-light-emphasis excited flex-shrink-0" role="button" data-bs-toggle="modal" data-bs-target="#bookModal">Book a vacation</a>
             <a class="nav-link" role="button" data-bs-toggle="modal" data-bs-target="#contacts">Contacts</a>
           </div>
-          <form class="d-flex ms-auto needs-validation mt-2 mt-lg-0" role="login" method="post" action="" data-bs-theme="light" novalidate>
+          <form class="d-flex ms-auto needs-validation mt-2 mt-lg-0" role="login" method="post" action="" data-bs-theme="light" id="login" novalidate>
             <div class="d-flex ms-lg-4 me-2 flex-fill position-relative">
               <input type="text" class="form-control flex-fill" id="username" placeholder="Username" aria-label="Username" required>
               <div class="invalid-tooltip">
                 This username doesn't exist. <br>
-                <a role="button" data-bs-toggle="modal" data-bs-target="#bookModal">Register</a> instead.
+                <a role="button" data-bs-toggle="modal" data-bs-target="#registration">Register</a> instead.
               </div>
             </div>
             <div class="d-flex me-2 flex-fill position-relative">
@@ -39,7 +39,7 @@
                 Wrong password.
               </div>
             </div>
-            <button type="submit" class="btn btn-outline-light">Login</button>    
+            <button type="submit" class="btn btn-outline-light" form="login">Login</button>   
           </form>
         </div>
       </div>
@@ -216,7 +216,7 @@
         f3mf/imwt-exercises 
       </a>
       <div class="text-center mt-2 text-body-tertiary">Background: <a class="fst-italic link-secondary text-decoration-none link-opacity-75 link-opacity-hover-100" href="https://www.moma.org/collection/works/79245">Odilon Redon. Underwater Vision. c. 1910 | MoMA</a></div>
-      <div class="text-center mt-3" id="last-modified">Last modified on 5<sup>th</sup> March 2024</div>
+      <div class="text-center mt-3" id="last-modified">Last modified on 6<sup>th</sup> March 2024</div>
     </div>
     <!-- Modals -->
     <!-- About -->
@@ -247,7 +247,7 @@
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <form class="row gy-3 gx-2 needs-validation" id="bookForm" role="book" method="post" action="" novalidate>
+              <form class="row gy-3 gx-2 needs-validation" id="bookForm" role="book" form method="post" action="" novalidate>
                 <div class="col-12 form-floating">
                   <select class="form-select" aria-label="Choose an island" id="island" required>
                     <option selected disabled value="">Choose...</option>
@@ -286,7 +286,7 @@
                   <label class="form-label" for="month" id="monthLabel">Month</label>
                 </div>
                 <div class="col-md-6 form-floating">
-                  <input type="text" class="form-control" id="name" placeholder="Name" required>
+                  <input type="text" class="form-control" id="name" placeholder="Name" autocomplete="given-name" required>
                   <label for="name" class="form-label">Name</label>
                 </div>
                 <div class="col-md-6 form-floating">
@@ -294,7 +294,7 @@
                   <label for="surname" class="form-label">Surname</label>
                 </div>
                 <div class="col-12 form-floating">
-                  <input type="text" class="form-control" id="address" placeholder="123 Main St" required>
+                  <input type="text" class="form-control" id="address" placeholder="123 Main St" autocomplete="street-address" required>
                   <label for="address" class="form-label">Address</label>
                 </div>
                 <div class="col-md-6 form-floating">
@@ -581,7 +581,25 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back to dreaming</button>
-            <button type="submit" class="btn btn-success" form="bookForm" data-bs-dismiss="modal">Next</button>
+            <button type="submit" class="btn btn-success submit" form="bookForm"data-bs-target="#registration" data-bs-toggle="modal" id="nextButton">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Registration -->
+    <div class="modal fade" id="registration" tabindex="-1" aria-labelledby="Registration" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>

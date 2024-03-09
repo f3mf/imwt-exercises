@@ -1,10 +1,13 @@
-// Disabling form submissions if there are invalid fields
+// Disabling form submissions if there are invalid fields + next modal transition
 
 var forms = document.querySelectorAll('.needs-validation')
 
 Array.from(forms).forEach(form => {
   var formId = form.getAttribute("id")
-  let button = document.querySelector("[form=" + formId + "]");
+  var button = document.querySelector("[form=" + formId + "]");
+  var formModalEl = document.getElementById("bookModal");
+  var nextModalId = button.getAttribute("data-bs-target");
+  var nextModalEl = document.querySelector(nextModalId);
 
   button.addEventListener('click', event => {
     form.classList.add('was-validated');
@@ -12,6 +15,17 @@ Array.from(forms).forEach(form => {
     if (!form.checkValidity()) {
       event.preventDefault();
       event.stopPropagation();
+      if (formModalEl) {
+        var formModal = bootstrap.Modal.getInstance(formModalEl);
+        formModal._triggerBackdropTransition();
+      }
+    }
+
+    else if (formModalEl) {
+      var formModal = bootstrap.Modal.getInstance(formModalEl);
+      var nextModal = bootstrap.Modal.getOrCreateInstance(nextModalEl);
+      formModal.hide();
+      nextModal.show();
     }
 
   }, false);
@@ -20,6 +34,7 @@ Array.from(forms).forEach(form => {
 
 
 // Enable autofocus on modal elements
+var bookModalEl = document.getElementById("bookModal");
 
 bookModalEl.addEventListener("shown.bs.modal", () => {
   island.focus()
@@ -71,111 +86,11 @@ window.onload = function() {
 
 };
 
+
 // Validation of dates
 
 
 /* Draft
-
-var bookForm = document.getElementById("bookForm");
-var bookModalEl = document.getElementById("bookModal");
-var island = document.getElementById("island");
-var nextButton = document.getElementById("nextButton");
-var registrationEl = document.getElementById("registration");
-
-if (bookModalEl) {
-
-    bookModalEl.addEventListener("toggle.bs.modal", event => {
-
-      if (!bookForm.checkValidity()) {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        };
-
-    });
-
-};
-
-
-
-registrationEl.addEventListener("show.bs.modal", event => {
-
-    if (!bookForm.checkValidity()) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-  });
-
-          var formModalEl =form.closest(".modal");
-          var formModal = bootstrap.Modal.getInstance(formModalEl); 
-          var nextModalId = button.getAttribute("data-bs-target");
-          var nextModalEl = document.querySelector("'" + nextModalId + "'");
-          var nextModal = bootstrap.Modal.getInstance(nextModalEl);
-
-          formModalEL.hide.bs.modal.preventDefault();
-          nextModalEl.show.bs.modal.preventDefault();
-
-
-
-
-
-      else {
-
-        var formModal = form.closest(".modal");
-        var button = document.formModal.querySelectorAll('[type="submit"]');
-
-        if (button[0].hasAttribute("data-bs-target")) {
-
-          var nextModal = buttons[0].getAttribute("data-bs-target");
-
-          formModal.modal("hide");
-          nextModal.modal("toggle");
-
-        }
-
-        else {
-          formModal.modal("hide");
-        }
-      }
-
-
-  bookForm.onsubmit = function() {
-    if (this.my_checkbox[0].checked && this.input1.value=="") {
-      alert("Please enter something in input 1");
-      this.input1.focus();
-      return false;
-    }
-    if (this.my_checkbox[1].checked && this.input2.value=="") {
-      alert("Please enter something in input 2");
-      this.input2.focus();
-      return false;
-    }
-    return true; // allow submission
-  }
-  // if the checkboxes had different IDs this could have been one function
-  form1.my_checkbox[0].onclick = function() {
-    this.form.my_checkbox[1].checked=!this.checked;
-  }
-  form1.my_checkbox[1].onclick=function() {
-    this.form.my_checkbox[0].checked=!this.checked;
-  }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  const inputs = Array.from(
-    document.querySelectorAll('input[name=telephone], input[name=mobile]')
-  );
-
-  const inputListener = e => {
-    inputs
-      .filter(i => i !== e.target)
-      .forEach(i => (i.required = !e.target.value.length));
-  };
-
-  inputs.forEach(i => i.addEventListener('input', inputListener));
-});
-
-
 
 
 

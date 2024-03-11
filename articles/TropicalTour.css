@@ -99,6 +99,47 @@ blockquote {
     border-color: unset;
 }
 
+a {
+    transition: color .15s ease-in-out;
+}
+
+.form-floating>.form-control-plaintext~label::after, .form-floating>.form-control:focus~label::after, .form-floating>.form-control:not(:placeholder-shown)~label::after, .form-floating>.form-select~label::after {
+    background-color: transparent;
+}
+
+.bi-eye-slash {
+    display: none;   
+}
+
+.input-group label {
+    z-index: 5;
+}
+
+label[for="newUsername"] {
+    padding-left: 3.3rem;
+    transform-origin: 1.8rem 0;
+}
+
+label[for="phone"] {
+    padding-left: 5.8rem;
+    transform-origin: 4.5rem 0;
+}
+
+.input-group button {
+    border: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+#togglePasswordVisibility {
+    border-top-right-radius: var(--bs-border-radius);
+    border-bottom-right-radius: var(--bs-border-radius);
+}
+
+#newUsername, #phone {
+    border-top-right-radius: var(--bs-border-radius);
+    border-bottom-right-radius: var(--bs-border-radius);
+}
+
+
 /* Smartphone only */
 
 @media (max-width: 767px) {
@@ -171,7 +212,7 @@ body {
     min-height: calc(100% - var(--bs-modal-margin)* 2);
 }
 
-#month, #monthLabel {
+#month, #monthLabel, #period, #periodLabel {
     display: none;
 }
 
@@ -224,7 +265,7 @@ body {
     height: 100%;
 }
 
-#month, #monthLabel {
+#month, #monthLabel, #period, #periodLabel {
     visibility: hidden;
 }
 

@@ -1,5 +1,21 @@
-// Disabling form submissions if there are invalid fields + next modal transition
+// Inline-radio validation
+var lastOption = document.getElementById("gender4");
+var lastOptionContainer = lastOption.closest(".form-check-inline");
 
+lastOption.addEventListener("invalid", () => {
+  lastOptionContainer.classList.add("is-invalid");
+
+  var options = document.querySelectorAll("#gender input[name='gender']");
+
+  Array.from(options).forEach(option => {
+    option.addEventListener("change", () => {
+      lastOptionContainer.classList.remove("is-invalid");
+      option.removeEventListener("change",);
+    });
+  });
+});
+
+// Disabling form submissions if there are invalid fields + next modal transition
 var forms = document.querySelectorAll('.needs-validation')
 
 Array.from(forms).forEach(form => {
@@ -42,6 +58,7 @@ Array.from(forms).forEach(form => {
     Array.from(otherButtons).forEach(button => {
       button.addEventListener("click", () => {
         form.classList.remove('was-validated');
+        lastOptionContainer.classList.remove("is-invalid");
       });
     });
   };
@@ -216,23 +233,6 @@ checkbox.addEventListener("change", () => {
       otherButton.classList.add("rounded-end");
       other.removeAttribute("required");
   };
-});
-
-// Inline-radio validation
-var lastOption = document.getElementById("gender4");
-var lastOptionContainer = lastOption.closest(".form-check-inline");
-
-lastOption.addEventListener("invalid", () => {
-  lastOptionContainer.classList.add("is-invalid");
-
-  var options = document.querySelectorAll("#gender input[name='gender']");
-
-  Array.from(options).forEach(option => {
-    option.addEventListener("change", () => {
-      lastOptionContainer.classList.remove("is-invalid");
-      option.removeEventListener("change",);
-    });
-  });
 });
 
 // Submit all forms at once
